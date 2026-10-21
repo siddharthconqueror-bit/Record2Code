@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Report2Code - Trainee Mode &amp; Practice Evaluation</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "on-background": "#0b1c30",
+            "tertiary": "#0051d5",
+            "primary": "#00685f",
+            "on-primary-fixed-variant": "#005049",
+            "surface-dim": "#cbdbf5",
+            "background": "#f8f9ff",
+            "tertiary-fixed": "#dbe1ff",
+            "tertiary-fixed-dim": "#b4c5ff",
+            "surface-container-highest": "#d3e4fe",
+            "primary-fixed": "#89f5e7",
+            "on-error": "#ffffff",
+            "surface-variant": "#d3e4fe",
+            "surface": "#f8f9ff",
+            "outline-variant": "#bcc9c6",
+            "inverse-on-surface": "#eaf1ff",
+            "on-tertiary-fixed": "#00174b",
+            "secondary-fixed": "#dae2fd",
+            "error-container": "#ffdad6",
+            "outline": "#6d7a77",
+            "on-secondary-fixed": "#131b2e",
+            "primary-fixed-dim": "#6bd8cb",
+            "error": "#ba1a1a",
+            "on-surface": "#0b1c30",
+            "surface-container-lowest": "#ffffff",
+            "on-secondary-fixed-variant": "#3f465c",
+            "surface-container": "#e5eeff",
+            "secondary-fixed-dim": "#bec6e0",
+            "secondary": "#565e74",
+            "on-tertiary-container": "#fefcff",
+            "on-primary": "#ffffff",
+            "surface-container-low": "#eff4ff",
+            "on-primary-container": "#f4fffc",
+            "secondary-container": "#dae2fd",
+            "surface-tint": "#006a61",
+            "on-tertiary-fixed-variant": "#003ea8",
+            "tertiary-container": "#316bf3",
+            "on-tertiary": "#ffffff",
+            "on-secondary-container": "#5c647a",
+            "surface-container-high": "#dce9ff",
+            "on-primary-fixed": "#00201d",
+            "on-error-container": "#93000a",
+            "primary-container": "#008378",
+            "inverse-primary": "#6bd8cb",
+            "inverse-surface": "#213145",
+            "on-surface-variant": "#3d4947",
+            "surface-bright": "#f8f9ff",
+            "on-secondary": "#ffffff"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.125rem",
+            "lg": "0.25rem",
+            "xl": "0.5rem",
+            "full": "0.75rem"
+          },
+          "fontFamily": {
+            "title-sm": ["IBM Plex Sans"],
+            "body-sm": ["Inter"],
+            "body-lg": ["Inter"],
+            "code-display": ["IBM Plex Sans"],
+            "headline-xl-mobile": ["IBM Plex Sans"],
+            "headline-md": ["IBM Plex Sans"],
+            "headline-lg": ["IBM Plex Sans"],
+            "label-md": ["IBM Plex Sans"],
+            "headline-xl": ["IBM Plex Sans"],
+            "body-md": ["Inter"],
+            "label-sm": ["IBM Plex Sans"]
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-[#f3f6fb] text-on-surface font-body-md min-h-screen flex flex-col selection:bg-primary-fixed selection:text-on-primary-fixed antialiased">
+<!-- Top Navigation -->
+<header class="w-full bg-white border-b border-slate-200 sticky top-0 z-50"><div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-wrap items-center justify-between gap-2 py-2"><div class="flex flex-wrap items-center gap-4"><a href="index.html" class="flex flex-col"><span class="flex items-center gap-2"><span class="material-symbols-outlined text-teal-700 text-2xl">terminal</span><span class="text-xl font-bold tracking-tight text-slate-900">Report2Code</span></span><span class="text-[11px] text-slate-500">The coding workspace for trainee coders.</span></a><nav class="flex flex-wrap items-center gap-1 md:ml-4 md:pl-4 md:border-l md:border-slate-200"><a href="index.html" class="px-3 py-1.5 text-sm rounded-md transition-colors font-medium text-slate-600 hover:text-slate-900 hover:bg-slate-50">Home</a><a href="workspace.html" class="px-3 py-1.5 text-sm rounded-md transition-colors font-medium text-slate-600 hover:text-slate-900 hover:bg-slate-50">Workspace</a><a href="trainee.html" class="px-3 py-1.5 text-sm rounded-md transition-colors font-bold text-teal-800 bg-teal-50 border-b-2 border-teal-700">Trainee Mode</a><a href="about.html" class="px-3 py-1.5 text-sm rounded-md transition-colors font-medium text-slate-600 hover:text-slate-900 hover:bg-slate-50">About</a><a href="support.html" class="px-3 py-1.5 text-sm rounded-md transition-colors font-medium text-slate-600 hover:text-slate-900 hover:bg-slate-50">Support</a></nav></div><span class="px-2.5 py-1 text-xs font-semibold bg-teal-50 text-teal-800 border border-teal-200 rounded-full">WHO ICD-10</span></div></header>
+<!-- Main Container (Centered, Stacked upper note & lower evaluation table) -->
+<main class="flex-1 px-6 py-6 max-w-[1400px] mx-auto w-full flex flex-col gap-6">
+<!-- Upper Section: Doctor's Note / Practice Vignette -->
+<section class="bg-surface-container-lowest border border-outline-variant rounded-xl shadow-sm overflow-hidden">
+<!-- Header bar -->
+<div class="px-5 py-3.5 border-b border-outline-variant bg-surface flex flex-wrap items-center justify-between gap-3">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-xl" data-icon="medical_information">medical_information</span>
+<h2 class="text-title-sm font-bold text-on-surface font-title-sm">
+          Practice Case #108: Inpatient Cardiology &amp; Nephrology
+        </h2>
+<span class="px-2 py-0.5 rounded text-label-sm font-semibold bg-surface-container border border-outline-variant text-secondary">
+          Inpatient Admission
+        </span>
+</div>
+<!-- Marked View Toggle -->
+<button class="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg border border-primary text-primary bg-primary-fixed/20 hover:bg-primary-fixed/40 transition-colors text-label-sm font-semibold shadow-xs">
+<span class="material-symbols-outlined text-base" data-icon="highlight">highlight</span>
+<span>Marked view (Hints On)</span>
+</button>
+</div>
+<!-- Case Selection Pills -->
+<div class="px-5 py-2.5 border-b border-outline-variant/60 bg-surface-container-low/40 flex flex-wrap items-center gap-2">
+<span class="text-label-sm font-semibold text-secondary mr-1">Case Vignette:</span>
+<button class="px-3 py-1 rounded-full text-label-sm font-semibold bg-primary text-on-primary shadow-xs flex items-center gap-1">
+<span>Diabetic with CKD (Active)</span>
+<span class="material-symbols-outlined text-xs" data-icon="check">check</span>
+</button>
+<button class="px-3 py-1 rounded-full text-label-sm font-medium bg-surface border border-outline-variant text-on-surface hover:bg-surface-container-high transition-colors">
+        COPD with Infection
+      </button>
+<button class="px-3 py-1 rounded-full text-label-sm font-medium bg-surface border border-outline-variant text-on-surface hover:bg-surface-container-high transition-colors">
+        Cardiac (HTN + HF)
+      </button>
+<button class="px-3 py-1 rounded-full text-label-sm font-medium bg-surface border border-outline-variant text-on-surface hover:bg-surface-container-high transition-colors">
+        Gastroenteritis &amp; Dehydration
+      </button>
+</div>
+<!-- Note Content Area -->
+<div class="p-5">
+<div class="border border-outline-variant rounded-lg bg-surface p-4 font-mono text-body-md text-on-surface leading-relaxed min-h-[150px]">
+        "Patient is a 74-year-old male admitted with persistent orthopnea and 3+ bilateral lower extremity edema. Transthoracic echocardiogram reveals ejection fraction of 38%. Longstanding medical history of <mark class="bg-[#89f5e7] text-on-primary-fixed font-semibold px-1 py-0.5 rounded border border-primary/20">essential hypertension</mark> managed with lisinopril and diagnosed <mark class="bg-[#89f5e7] text-on-primary-fixed font-semibold px-1 py-0.5 rounded border border-primary/20">Stage 3 Chronic Kidney Disease (eGFR 42 mL/min)</mark>. Discharge Summary Assessment: <mark class="bg-[#89f5e7] text-on-primary-fixed font-semibold px-1 py-0.5 rounded border border-primary/20">Acute on chronic combined systolic and diastolic congestive heart failure</mark> secondary to progressive hypertensive heart and renal disease."
+      </div>
+</div>
+<!-- Bottom Toolbar -->
+<div class="px-5 py-3 border-t border-outline-variant bg-surface-container-low flex flex-wrap items-center justify-between gap-3">
+<div class="flex items-center gap-4 text-label-sm text-secondary">
+<span>Character Count: <strong class="text-on-surface font-mono">534</strong></span>
+<span>•</span>
+<span class="inline-flex items-center gap-1 font-semibold text-on-surface">
+<span class="material-symbols-outlined text-sm text-tertiary" data-icon="school">school</span>
+          Difficulty: Level 3
+        </span>
+</div>
+<div class="flex items-center gap-2">
+<button class="px-3 py-1.5 border border-outline-variant text-on-surface rounded-lg text-label-md font-semibold hover:bg-surface-container-high transition-colors flex items-center gap-1">
+<span class="material-symbols-outlined text-sm" data-icon="refresh">refresh</span>
+<span>Clear / Reload</span>
+</button>
+<button class="px-4 py-1.5 bg-primary text-on-primary rounded-lg text-label-md font-semibold hover:bg-primary-container transition-colors shadow-sm flex items-center gap-1.5">
+<span class="material-symbols-outlined text-sm" data-icon="fact_check">fact_check</span>
+<span>Submit for Code Evaluation</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Lower Section: Interactive Code Assignment & Suggested Codes -->
+<section class="bg-surface-container-lowest border border-outline-variant rounded-xl shadow-sm overflow-hidden flex flex-col">
+<!-- Header -->
+<div class="px-5 py-3.5 border-b border-outline-variant bg-surface flex items-center justify-between">
+<div class="flex items-center gap-2.5">
+<h2 class="text-title-sm font-bold text-on-surface font-title-sm">Suggested Codes &amp; Evaluation</h2>
+<span class="px-2 py-0.5 bg-tertiary-fixed text-on-tertiary-fixed-variant rounded text-label-sm font-semibold font-mono border border-tertiary-fixed-dim">
+          3 Candidate Inferences
+        </span>
+</div>
+<div class="text-label-sm text-secondary">
+        Compare candidate ICD-10 combinations against official sequencing rules
+      </div>
+</div>
+<!-- Clean Structured Table matching reference layout -->
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse text-body-md">
+<thead>
+<tr class="bg-surface-container-low border-b border-outline-variant text-secondary text-label-sm font-label-sm">
+<th class="py-3 px-4 w-12 text-center">#</th>
+<th class="py-3 px-4 w-36 font-semibold">Suggested Code</th>
+<th class="py-3 px-6 font-semibold">Clinical Description</th>
+<th class="py-3 px-4 w-36 font-semibold">Confidence / Match</th>
+<th class="py-3 px-6 font-semibold">Source Rationale</th>
+<th class="py-3 px-4 w-36 text-center font-semibold">Trainee Action</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant/60 font-mono text-body-sm">
+<!-- Row 1 (Combination Code) -->
+<tr class="hover:bg-surface-container-low/50 transition-colors bg-primary-fixed/10">
+<td class="py-3.5 px-4 text-center font-sans font-semibold text-secondary">1</td>
+<td class="py-3.5 px-4">
+<span class="px-2 py-0.5 rounded bg-primary text-on-primary font-bold text-label-sm">I13.0</span>
+</td>
+<td class="py-3.5 px-6 font-sans text-on-surface font-medium">
+              Hypertensive heart and renal disease with (congestive) heart failure
+            </td>
+<td class="py-3.5 px-4">
+<div class="flex items-center gap-1.5 font-sans">
+<span class="w-2.5 h-2.5 rounded-full bg-primary"></span>
+<span class="font-bold text-primary text-label-sm">High Match</span>
+</div>
+</td>
+<td class="py-3.5 px-6 font-sans text-secondary text-body-sm">
+              Combines hypertension, heart failure and kidney disease in one code. The book presumes the link.
+            </td>
+<td class="py-3.5 px-4 text-center">
+<button class="px-3 py-1 rounded bg-primary text-on-primary text-label-sm font-semibold hover:bg-primary-container transition-colors shadow-xs">
+                Accept Code
+              </button>
+</td>
+</tr>
+<!-- Row 2 (Specific Heart Failure Manifestation) -->
+<tr class="hover:bg-surface-container-low/50 transition-colors">
+<td class="py-3.5 px-4 text-center font-sans font-semibold text-secondary">2</td>
+<td class="py-3.5 px-4">
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-on-surface border border-outline-variant font-bold text-label-sm">I50.0</span>
+</td>
+<td class="py-3.5 px-6 font-sans text-on-surface">
+              Congestive heart failure
+            </td>
+<td class="py-3.5 px-4">
+<div class="flex items-center gap-1.5 font-sans">
+<span class="w-2.5 h-2.5 rounded-full bg-tertiary"></span>
+<span class="font-semibold text-tertiary text-label-sm">Supported</span>
+</div>
+</td>
+<td class="py-3.5 px-6 font-sans text-secondary text-body-sm">
+              Optional additional code for the type of heart failure.</td>
+<td class="py-3.5 px-4 text-center">
+<button class="px-3 py-1 rounded border border-outline-variant bg-surface text-on-surface text-label-sm font-semibold hover:bg-surface-container-high transition-colors">
+                Accept Code
+              </button>
+</td>
+</tr>
+<!-- Row 3 (CKD Staging) -->
+<tr class="hover:bg-surface-container-low/50 transition-colors">
+<td class="py-3.5 px-4 text-center font-sans font-semibold text-secondary">3</td>
+<td class="py-3.5 px-4">
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-on-surface border border-outline-variant font-bold text-label-sm">N18.9</span>
+</td>
+<td class="py-3.5 px-6 font-sans text-on-surface">
+              Chronic kidney disease, unspecified (this book has no stage codes)
+            </td>
+<td class="py-3.5 px-4">
+<div class="flex items-center gap-1.5 font-sans">
+<span class="w-2.5 h-2.5 rounded-full bg-primary"></span>
+<span class="font-bold text-primary text-label-sm">Supported</span>
+</div>
+</td>
+<td class="py-3.5 px-6 font-sans text-secondary text-body-sm">
+              Identifies the kidney disease. This book has no stage-wise CKD codes.
+            </td>
+<td class="py-3.5 px-4 text-center">
+<button class="px-3 py-1 rounded border border-outline-variant bg-surface text-on-surface text-label-sm font-semibold hover:bg-surface-container-high transition-colors">
+                Accept Code
+              </button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Practice Multiple-Choice / Sequencing Selection Interface -->
+<div class="p-5 border-t border-outline-variant bg-surface space-y-3">
+<div class="flex items-center justify-between">
+<h3 class="text-title-sm font-semibold text-on-surface">
+          Trainee Decision: Select the Compliant Sequencing Pathway
+        </h3>
+<span class="text-label-sm font-mono font-bold text-tertiary">Score Value: +10 Pts</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-3.5">
+<!-- Option A Card -->
+<label class="p-3.5 rounded-lg border border-outline-variant bg-surface-container-lowest hover:border-outline cursor-pointer flex items-start gap-3 transition-colors">
+<input class="mt-1 text-primary focus:ring-primary h-4 w-4" name="trainee_sequence" type="radio"/>
+<div class="space-y-1">
+<div class="flex items-center gap-2">
+<span class="text-label-sm font-bold uppercase text-secondary">Option A</span>
+<span class="text-label-sm font-mono font-semibold text-secondary">Separate Unbundled Coding</span>
+</div>
+<p class="text-body-sm text-on-surface">
+              Sequence <strong class="font-mono text-on-surface">I50.0</strong> as primary, with secondary <strong class="font-mono text-on-surface">I10</strong> and <strong class="font-mono text-on-surface">N18.9</strong>.
+            </p>
+<p class="text-label-sm text-error flex items-center gap-1 font-medium">
+<span class="material-symbols-outlined text-xs" data-icon="cancel">cancel</span>
+              Splits a combination code. The book classes these together under I13.0.</p>
+</div>
+</label>
+<!-- Option B Card (Selected / Compliant) -->
+<label class="p-3.5 rounded-lg border-2 border-primary bg-primary-fixed/15 cursor-pointer flex items-start gap-3 transition-colors relative">
+<input checked="" class="mt-1 text-primary focus:ring-primary h-4 w-4" name="trainee_sequence" type="radio"/>
+<div class="space-y-1">
+<div class="flex items-center gap-2">
+<span class="text-label-sm font-bold uppercase text-primary">Option B (Compliant)</span>
+<span class="px-1.5 py-0.2 rounded bg-primary text-on-primary text-label-sm font-bold">Recommended</span>
+</div>
+<p class="text-body-sm text-on-surface">
+              Assign combination code <strong class="font-mono text-primary">I13.0</strong> (Hypertensive heart &amp; CKD) as principal, followed by <strong class="font-mono text-primary">I50.0</strong> and <strong class="font-mono text-primary">N18.9</strong>.
+            </p>
+<p class="text-label-sm text-primary flex items-center gap-1 font-semibold">
+<span class="material-symbols-outlined text-xs" data-icon="check_circle">check_circle</span>
+              Follows the book rule for hypertension with heart and kidney disease.</p>
+</div>
+</label>
+</div>
+</div>
+<!-- Docked Convention Flashcard / Rule Helper Panel -->
+<div class="px-5 py-3 border-t border-outline-variant bg-surface-container-low flex flex-col md:flex-row md:items-center justify-between gap-3">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary text-xl" data-icon="menu_book">menu_book</span>
+<div class="text-label-sm">
+<strong class="text-on-surface font-semibold">Rule Quick Reference:</strong>
+<span class="text-secondary ml-1">
+<span class="px-1.5 py-0.5 rounded bg-error-container text-on-error-container font-mono font-bold">Excludes1</span> = Not coded together;
+            <span class="px-1.5 py-0.5 rounded bg-primary-fixed text-on-primary-fixed-variant font-mono font-bold ml-1.5">Excludes2</span> = Both conditions may be reported concurrently when documented.
+          </span>
+</div>
+</div>
+<div class="flex items-center gap-2 self-end md:self-auto shrink-0">
+<button class="px-3 py-1 rounded border border-outline-variant bg-surface text-on-surface text-label-sm font-semibold hover:bg-surface-container-high transition-colors flex items-center gap-1">
+<span class="material-symbols-outlined text-sm text-secondary" data-icon="help">help</span>
+<span>View Coding Rationale</span>
+</button>
+<button class="px-3.5 py-1 bg-primary text-on-primary rounded text-label-sm font-semibold hover:bg-primary-container transition-colors shadow-xs flex items-center gap-1">
+<span>Confirm Selection</span>
+<span class="material-symbols-outlined text-xs" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="border-t border-slate-200 bg-white mt-10"><div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5 text-sm text-slate-500 flex flex-wrap justify-between gap-2"><span>© 2026 Report2Code. Training and practice tool. A certified coder must verify every code.</span><span>WHO ICD-10 · Use de-identified notes only</span></div></footer>
+</body></html>

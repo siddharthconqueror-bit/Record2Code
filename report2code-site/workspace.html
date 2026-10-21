@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+
+<html class="h-full bg-slate-50" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Report2Code - Clinical Coding Workspace</title>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Google Fonts: IBM Plex Sans & Inter -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&amp;family=Inter:wght@400;500;600&amp;family=IBM+Plex+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS v3 with Plugins -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Configuration matching dictated theme & branding tokens -->
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#00685f",
+            "primary-container": "#008378",
+            "primary-fixed": "#89f5e7",
+            "primary-fixed-dim": "#6bd8cb",
+            "on-primary": "#ffffff",
+            "secondary": "#565e74",
+            "on-surface": "#0b1c30",
+            "on-surface-variant": "#3d4947",
+            "surface": "#f8f9ff",
+            "surface-container-low": "#f1f5f9",
+            "surface-container": "#e2e8f0",
+            "surface-container-lowest": "#ffffff",
+            "outline": "#6d7a77",
+            "outline-variant": "#cbd5e1",
+            "tertiary": "#0051d5",
+            "error": "#ba1a1a",
+            "error-container": "#ffdad6"
+          },
+          fontFamily: {
+            "title-sm": ["IBM Plex Sans", "sans-serif"],
+            "body-sm": ["Inter", "sans-serif"],
+            "body-md": ["Inter", "sans-serif"],
+            "body-lg": ["Inter", "sans-serif"],
+            "headline-lg": ["IBM Plex Sans", "sans-serif"],
+            "headline-md": ["IBM Plex Sans", "sans-serif"],
+            "code-display": ["IBM Plex Mono", "monospace"]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 20;
+      font-size: 18px;
+      line-height: 1;
+      display: inline-block;
+      vertical-align: middle;
+    }
+    .custom-scrollbar::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-track {
+      background: #f8fafc;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+      background: #cbd5e1;
+      border-radius: 3px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+      background: #94a3b8;
+    }
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-800 font-body-md antialiased min-h-screen flex flex-col selection:bg-teal-100 selection:text-teal-900">
+<!-- ================= TOP HEADER ================= -->
+<header class="w-full bg-white border-b border-slate-200 sticky top-0 z-50"><div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-wrap items-center justify-between gap-2 py-2"><div class="flex flex-wrap items-center gap-4"><a href="index.html" class="flex flex-col"><span class="flex items-center gap-2"><span class="material-symbols-outlined text-teal-700 text-2xl">terminal</span><span class="text-xl font-bold tracking-tight text-slate-900">Report2Code</span></span><span class="text-[11px] text-slate-500">The coding workspace for trainee coders.</span></a><nav class="flex flex-wrap items-center gap-1 md:ml-4 md:pl-4 md:border-l md:border-slate-200"><a href="index.html" class="px-3 py-1.5 text-sm rounded-md transition-colors font-medium text-slate-600 hover:text-slate-900 hover:bg-slate-50">Home</a><a href="workspace.html" class="px-3 py-1.5 text-sm rounded-md transition-colors font-bold text-teal-800 bg-teal-50 border-b-2 border-teal-700">Workspace</a><a href="trainee.html" class="px-3 py-1.5 text-sm rounded-md transition-colors font-medium text-slate-600 hover:text-slate-900 hover:bg-slate-50">Trainee Mode</a><a href="about.html" class="px-3 py-1.5 text-sm rounded-md transition-colors font-medium text-slate-600 hover:text-slate-900 hover:bg-slate-50">About</a><a href="support.html" class="px-3 py-1.5 text-sm rounded-md transition-colors font-medium text-slate-600 hover:text-slate-900 hover:bg-slate-50">Support</a></nav></div><span class="px-2.5 py-1 text-xs font-semibold bg-teal-50 text-teal-800 border border-teal-200 rounded-full">WHO ICD-10</span></div></header>
+<!-- ================= MAIN WORKSPACE WRAPPER ================= -->
+<main class="max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 py-6 space-y-6 flex-1">
+<!-- ================= UPPER MAIN SECTION: DOCTOR'S NOTE ================= -->
+<section class="bg-white rounded-lg border border-slate-200 shadow-sm overflow-hidden flex flex-col">
+<!-- Section Header -->
+<div class="px-5 py-3.5 border-b border-slate-200 bg-white flex flex-wrap items-center justify-between gap-3">
+<div class="flex items-center gap-3">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-teal-700 text-lg" data-icon="description">description</span>
+<h2 class="text-base font-bold font-title-sm text-slate-900">Doctor's Note</h2>
+</div>
+<span class="text-xs text-slate-400 font-mono font-medium">1,248 characters</span>
+</div>
+<!-- Marked View Pill Toggle -->
+<div class="flex items-center gap-2">
+<div class="inline-flex p-0.5 bg-slate-100 rounded-md border border-slate-200 text-xs">
+<button class="px-2.5 py-1 font-semibold text-slate-600 hover:text-slate-900 transition-colors">Raw text</button>
+<button class="px-2.5 py-1 bg-white text-teal-800 font-semibold rounded shadow-xs border border-slate-200 flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-teal-600"></span>
+<span>Marked view</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Preset Case Pills Row -->
+<div class="px-5 py-2.5 bg-slate-50/70 border-b border-slate-200 flex flex-wrap items-center gap-2">
+<span class="text-xs font-medium text-slate-500 mr-1 flex items-center gap-1">
+<span class="material-symbols-outlined text-sm" data-icon="bookmark">bookmark</span>
+          Preset Cases:
+        </span>
+<button class="px-3 py-1 bg-white hover:bg-slate-50 border border-teal-600 text-teal-900 font-semibold rounded text-xs transition-colors shadow-xs flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-teal-600"></span>
+          Diabetic with CKD
+        </button>
+<button class="px-3 py-1 bg-white hover:bg-slate-50 border border-slate-200 hover:border-slate-300 text-slate-700 rounded text-xs transition-colors shadow-xs">
+          COPD with Infection
+        </button>
+<button class="px-3 py-1 bg-white hover:bg-slate-50 border border-slate-200 hover:border-slate-300 text-slate-700 rounded text-xs transition-colors shadow-xs">
+          Cardiac (HTN + HF)
+        </button>
+<button class="px-3 py-1 bg-white hover:bg-slate-50 border border-slate-200 hover:border-slate-300 text-slate-700 rounded text-xs transition-colors shadow-xs">
+          Gastroenteritis &amp; Dehydration
+        </button>
+</div>
+<!-- Expansive Clinical Note Text Area -->
+<div class="p-5 relative">
+<label class="sr-only" for="clinical-note-input">Type or paste the doctor's note here</label>
+<div class="relative bg-white border border-slate-200 rounded-md p-4 min-h-[220px] max-h-[340px] overflow-y-auto custom-scrollbar font-body-md text-sm text-slate-800 leading-relaxed focus-within:ring-1 focus-within:ring-teal-600 focus-within:border-teal-600">
+<p class="mb-3 text-slate-500 italic text-xs border-b border-slate-100 pb-2">
+            Sample Note: Inpatient H&amp;P &amp; Progress Summary | Attending: Dr. Marcus Reed, MD (Internal Medicine)
+          </p>
+<p class="mb-2.5">
+<strong>CHIEF COMPLAINT:</strong> 64-year-old female presenting for routine inpatient optimization and worsening peripheral edema.
+          </p>
+<p class="mb-2.5">
+<strong>HISTORY OF PRESENT ILLNESS:</strong> Patient has a longstanding history of poorly controlled 
+            <mark class="bg-teal-50 text-teal-900 border-b-2 border-teal-600 px-1 py-0.5 rounded font-medium">Type 2 diabetes with severe peripheral polyneuropathy</mark>. 
+            Recent lab evaluation demonstrates persistent renal deterioration consistent with 
+            <mark class="bg-teal-50 text-teal-900 border-b-2 border-teal-600 px-1 py-0.5 rounded font-medium">Stage 3 CKD (eGFR 42 mL/min/1.73m², elevated microalbumin/creatinine ratio 340 mcg/mg)</mark>. 
+            Patient is also undergoing medical management for 
+            <mark class="bg-teal-50 text-teal-900 border-b-2 border-teal-600 px-1 py-0.5 rounded font-medium">essential systemic hypertension</mark> on lisinopril 20 mg daily.
+          </p>
+<p class="mb-2.5">
+<strong>REVIEW OF SYSTEMS / PULMONARY:</strong> Patient endorsed intermittent 
+            <mark class="bg-amber-50 text-amber-900 border-b-2 border-amber-500 px-1 py-0.5 rounded font-medium">wheezing, dyspnea on exertion</mark>, 
+            and mild productive cough over the last 3 days, consistent with acute exacerbation of chronic obstructive pulmonary disease.
+          </p>
+<p class="text-slate-700">
+<strong>IMPRESSION &amp; CODING INSTRUCTIONS:</strong> Documented diabetic kidney disease. Linkage between type 2 diabetes mellitus and chronic kidney disease confirmed. Hypertension managed medically. Acute bronchitis ruled out.
+          </p>
+</div>
+</div>
+<!-- Bottom Action Bar for Note -->
+<div class="px-5 py-3 bg-slate-50 border-t border-slate-200 flex items-center justify-between">
+<div class="flex items-center gap-2 text-xs text-slate-500 font-medium">
+<span class="material-symbols-outlined text-slate-400 text-sm" data-icon="notes">notes</span>
+<span>1,248 characters • 174 words parsed</span>
+</div>
+<div class="flex items-center gap-2">
+<button class="px-3.5 py-1.5 bg-white border border-slate-300 rounded text-xs font-semibold text-slate-700 hover:bg-slate-100 hover:text-slate-900 transition-colors shadow-xs">
+            Clear
+          </button>
+<button class="px-4 py-1.5 bg-teal-700 hover:bg-teal-800 text-white rounded text-xs font-bold transition-colors shadow-xs flex items-center gap-1.5 active:scale-[0.99]">
+<span class="material-symbols-outlined text-sm" data-icon="auto_awesome">auto_awesome</span>
+<span>Analyze Note</span>
+</button>
+</div>
+</div>
+</section>
+<!-- ================= LOWER SECTION: SUGGESTED CODES TABLE ================= -->
+<section class="bg-white rounded-lg border border-slate-200 shadow-sm overflow-hidden flex flex-col">
+<!-- Section Header -->
+<div class="px-5 py-3.5 border-b border-slate-200 bg-white flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-teal-700 text-lg" data-icon="fact_check">fact_check</span>
+<h2 class="text-base font-bold font-title-sm text-slate-900">Suggested Codes</h2>
+</div>
+<span class="px-2 py-0.5 text-xs font-semibold bg-teal-100 text-teal-900 rounded-full">4 suggested</span>
+</div>
+<div class="flex items-center gap-2 text-xs text-slate-500">
+<span>Sort by:</span>
+<select class="text-xs border-slate-200 rounded py-1 pl-2 pr-7 text-slate-700 bg-white focus:ring-teal-600 focus:border-teal-600">
+<option>Status (Clear first)</option>
+<option>Code Order (Numeric)</option>
+<option>Hierarchical Category</option>
+</select>
+</div>
+</div>
+<!-- Data Table Matching Layout -->
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse text-sm">
+<thead>
+<tr class="bg-slate-50/80 border-b border-slate-200 text-[11px] font-bold text-slate-600 uppercase tracking-wider">
+<th class="py-2.5 px-4 w-12 text-center" scope="col">#</th>
+<th class="py-2.5 px-4 w-28" scope="col">Code</th>
+<th class="py-2.5 px-4 w-1/3" scope="col">Description</th>
+<th class="py-2.5 px-4 w-40" scope="col">Confidence</th>
+<th class="py-2.5 px-4" scope="col">Source / Matched Text</th>
+<th class="py-2.5 px-4 w-36 text-right" scope="col">Action</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-slate-200 text-xs text-slate-700">
+<!-- ROW 1: E11.2† -->
+<tr class="hover:bg-teal-50/30 transition-colors">
+<td class="py-3 px-4 text-center font-mono text-slate-400 font-medium">1</td>
+<td class="py-3 px-4">
+<span class="font-code-display text-xs font-bold text-teal-800 bg-teal-50 px-2 py-0.5 rounded border border-teal-200 inline-block">
+                  E11.2†
+                </span>
+<span class="block text-[10px] text-teal-700 font-semibold mt-0.5">Dagger code</span>
+</td>
+<td class="py-3 px-4">
+<p class="font-semibold text-slate-900 text-xs">
+                  Type 2 diabetes mellitus with renal complications
+                </p>
+<p class="text-[11px] text-slate-500 mt-0.5">
+                  Endocrine, nutritional and metabolic diseases (E10–E14)
+                </p>
+</td>
+<td class="py-3 px-4">
+<div class="flex items-center gap-2">
+<div class="flex-1 bg-slate-200 rounded-full h-2 overflow-hidden">
+<div class="bg-teal-600 h-2 rounded-full" style="width: 96%"></div>
+</div>
+<span class="text-xs font-bold text-slate-900 font-mono">Clear</span>
+</div>
+</td>
+<td class="py-3 px-4">
+<div class="bg-slate-50 border-l-2 border-teal-600 p-1.5 rounded-r text-[11px] text-slate-700 italic max-w-sm">
+                  "Type 2 diabetes with severe peripheral polyneuropathy... Diabetic kidney"
+                </div>
+</td>
+<td class="py-3 px-4 text-right">
+<div class="flex items-center justify-end gap-1.5">
+<button class="px-2.5 py-1 bg-teal-700 hover:bg-teal-800 text-white font-semibold rounded text-[11px] transition-colors shadow-xs">
+                    Accept code
+                  </button>
+<button class="p-1 text-slate-400 hover:text-slate-600 rounded hover:bg-slate-100" title="Check Excludes1 Guidelines">
+<span class="material-symbols-outlined text-base" data-icon="policy">policy</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- ROW 2: N08.3* -->
+<tr class="hover:bg-teal-50/30 transition-colors">
+<td class="py-3 px-4 text-center font-mono text-slate-400 font-medium">2</td>
+<td class="py-3 px-4">
+<span class="font-code-display text-xs font-bold text-slate-800 bg-slate-100 px-2 py-0.5 rounded border border-slate-300 inline-block">
+                  N08.3*
+                </span>
+<span class="block text-[10px] text-slate-500 font-medium mt-0.5">Asterisk code</span>
+</td>
+<td class="py-3 px-4">
+<p class="font-semibold text-slate-900 text-xs">
+                  Glomerular disorders in diabetes mellitus
+                </p>
+<p class="text-[11px] text-slate-500 mt-0.5">
+                  Diseases of the genitourinary system (N00-N99) • Code with E11.2†
+                </p>
+</td>
+<td class="py-3 px-4">
+<div class="flex items-center gap-2">
+<div class="flex-1 bg-slate-200 rounded-full h-2 overflow-hidden">
+<div class="bg-teal-600 h-2 rounded-full" style="width: 94%"></div>
+</div>
+<span class="text-xs font-bold text-slate-900 font-mono">Clear</span>
+</div>
+</td>
+<td class="py-3 px-4">
+<div class="bg-slate-50 border-l-2 border-teal-600 p-1.5 rounded-r text-[11px] text-slate-700 italic max-w-sm">
+                  "Stage 3 CKD (eGFR 42 mL/min)"
+                </div>
+</td>
+<td class="py-3 px-4 text-right">
+<div class="flex items-center justify-end gap-1.5">
+<button class="px-2.5 py-1 bg-teal-700 hover:bg-teal-800 text-white font-semibold rounded text-[11px] transition-colors shadow-xs">
+                    Accept code
+                  </button>
+<button class="p-1 text-slate-400 hover:text-slate-600 rounded hover:bg-slate-100" title="Inspect Rules">
+<span class="material-symbols-outlined text-base" data-icon="info">info</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- ROW 3: I10 -->
+<tr class="hover:bg-teal-50/30 transition-colors">
+<td class="py-3 px-4 text-center font-mono text-slate-400 font-medium">3</td>
+<td class="py-3 px-4">
+<span class="font-code-display text-xs font-bold text-slate-800 bg-slate-100 px-2 py-0.5 rounded border border-slate-300 inline-block">
+                  I10
+                </span>
+<span class="block text-[10px] text-slate-500 font-medium mt-0.5">Comorbidity</span>
+</td>
+<td class="py-3 px-4">
+<p class="font-semibold text-slate-900 text-xs">
+                  Essential (primary) hypertension
+                </p>
+<p class="text-[11px] text-slate-500 mt-0.5">
+                  Diseases of the circulatory system (I00-I99)
+                </p>
+</td>
+<td class="py-3 px-4">
+<div class="flex items-center gap-2">
+<div class="flex-1 bg-slate-200 rounded-full h-2 overflow-hidden">
+<div class="bg-teal-600 h-2 rounded-full" style="width: 91%"></div>
+</div>
+<span class="text-xs font-bold text-slate-900 font-mono">Clear</span>
+</div>
+</td>
+<td class="py-3 px-4">
+<div class="bg-slate-50 border-l-2 border-teal-600 p-1.5 rounded-r text-[11px] text-slate-700 italic max-w-sm">
+                  "Essential systemic hypertension"
+                </div>
+</td>
+<td class="py-3 px-4 text-right">
+<div class="flex items-center justify-end gap-1.5">
+<button class="px-2.5 py-1 bg-teal-700 hover:bg-teal-800 text-white font-semibold rounded text-[11px] transition-colors shadow-xs">
+                    Accept code
+                  </button>
+<button class="p-1 text-slate-400 hover:text-slate-600 rounded hover:bg-slate-100" title="Inspect Rules">
+<span class="material-symbols-outlined text-base" data-icon="info">info</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- ROW 4: J44.1 -->
+<tr class="hover:bg-amber-50/40 bg-amber-50/10 transition-colors">
+<td class="py-3 px-4 text-center font-mono text-slate-400 font-medium">4</td>
+<td class="py-3 px-4">
+<span class="font-code-display text-xs font-bold text-amber-900 bg-amber-50 px-2 py-0.5 rounded border border-amber-300 inline-block">
+                  J44.1
+                </span>
+<span class="block text-[10px] text-amber-700 font-medium mt-0.5">Check</span>
+</td>
+<td class="py-3 px-4">
+<div class="flex items-start gap-1.5">
+<div>
+<p class="font-semibold text-slate-900 text-xs">
+                      Chronic obstructive pulmonary disease with acute exacerbation
+                    </p>
+<p class="text-[11px] text-amber-800 font-medium mt-0.5 flex items-center gap-1">
+<span class="material-symbols-outlined text-xs text-amber-600" data-icon="warning">warning</span>
+                      Check: acute bronchitis is mentioned. Confirm it is not a separate diagnosis.
+                    </p>
+</div>
+</div>
+</td>
+<td class="py-3 px-4">
+<div class="flex items-center gap-2">
+<div class="flex-1 bg-slate-200 rounded-full h-2 overflow-hidden">
+<div class="bg-amber-500 h-2 rounded-full" style="width: 88%"></div>
+</div>
+<span class="text-xs font-bold text-slate-900 font-mono">Check</span>
+</div>
+</td>
+<td class="py-3 px-4">
+<div class="bg-slate-50 border-l-2 border-amber-500 p-1.5 rounded-r text-[11px] text-slate-700 italic max-w-sm">
+                  "Wheezing, dyspnea on exertion"
+                </div>
+</td>
+<td class="py-3 px-4 text-right">
+<div class="flex items-center justify-end gap-1.5">
+<button class="px-3 py-1 bg-amber-600 hover:bg-amber-700 text-white font-semibold rounded text-[11px] transition-colors shadow-xs">
+                    Verify
+                  </button>
+<button class="p-1 text-slate-400 hover:text-slate-600 rounded hover:bg-slate-100" title="Flag for physician query">
+<span class="material-symbols-outlined text-base" data-icon="contact_support">contact_support</span>
+</button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<!-- ================= STAGED CLAIM SUMMARY TRAY (EXPANDABLE DRAWER) ================= -->
+<section class="bg-white rounded-lg border border-slate-200 shadow-sm overflow-hidden">
+<div class="px-5 py-3 bg-slate-50 border-b border-slate-200 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-teal-700 text-base" data-icon="view_list">view_list</span>
+<span class="text-xs font-bold font-title-sm text-slate-900 uppercase tracking-wider">Final Codes (Ready for Review)</span>
+<span class="px-2 py-0.5 text-[10px] font-bold bg-teal-100 text-teal-800 rounded">3 Staged Codes</span>
+</div>
+<div class="flex items-center gap-3 text-xs">
+
+<button class="text-teal-700 hover:text-teal-900 font-semibold flex items-center gap-1">
+<span>Re-order Sequence</span>
+<span class="material-symbols-outlined text-xs" data-icon="swap_vert">swap_vert</span>
+</button>
+</div>
+</div>
+<div class="p-4 bg-white flex flex-wrap items-center justify-between gap-4">
+<div class="flex flex-wrap items-center gap-2">
+<!-- Staged Code Tag 1 -->
+<div class="inline-flex items-center gap-2 px-3 py-1.5 bg-teal-50 border border-teal-200 rounded-md">
+<span class="text-[10px] font-bold bg-teal-700 text-white px-1.5 py-0.5 rounded">01 Dagger</span>
+<span class="font-code-display text-xs font-bold text-teal-900">E11.2†</span>
+<span class="text-xs text-slate-600 truncate max-w-[150px]">Type 2 DM w/ CKD</span>
+
+<button class="text-slate-400 hover:text-red-600 ml-1">
+<span class="material-symbols-outlined text-xs" data-icon="close">close</span>
+</button>
+</div>
+<!-- Staged Code Tag 2 -->
+<div class="inline-flex items-center gap-2 px-3 py-1.5 bg-slate-50 border border-slate-200 rounded-md">
+<span class="text-[10px] font-bold bg-slate-700 text-white px-1.5 py-0.5 rounded">02 Asterisk</span>
+<span class="font-code-display text-xs font-bold text-slate-800">N08.3*</span>
+<span class="text-xs text-slate-600 truncate max-w-[150px]">Diabetic kidney</span>
+
+<button class="text-slate-400 hover:text-red-600 ml-1">
+<span class="material-symbols-outlined text-xs" data-icon="close">close</span>
+</button>
+</div>
+<!-- Staged Code Tag 3 -->
+<div class="inline-flex items-center gap-2 px-3 py-1.5 bg-slate-50 border border-slate-200 rounded-md">
+<span class="text-[10px] font-bold bg-slate-700 text-white px-1.5 py-0.5 rounded">03 Other</span>
+<span class="font-code-display text-xs font-bold text-slate-800">I10</span>
+<span class="text-xs text-slate-600 truncate max-w-[150px]">Hypertension</span>
+
+<button class="text-slate-400 hover:text-red-600 ml-1">
+<span class="material-symbols-outlined text-xs" data-icon="close">close</span>
+</button>
+</div>
+</div>
+<div class="flex items-center gap-2 ml-auto">
+<button class="px-3 py-1.5 bg-white border border-slate-300 rounded text-xs font-semibold text-slate-700 hover:bg-slate-50 transition-colors">
+            Check order
+          </button>
+<button class="px-4 py-1.5 bg-slate-900 hover:bg-slate-800 text-white rounded text-xs font-bold transition-colors shadow-xs flex items-center gap-1.5">
+<span class="material-symbols-outlined text-sm" data-icon="output">output</span>
+<span>Finalise codes</span>
+</button>
+</div>
+</div>
+</section>
+</main>
+<!-- ================= COMPLIANCE FOOTER ================= -->
+<footer class="border-t border-slate-200 bg-white mt-10"><div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5 text-sm text-slate-500 flex flex-wrap justify-between gap-2"><span>© 2026 Report2Code. Training and practice tool. A certified coder must verify every code.</span><span>WHO ICD-10 · Use de-identified notes only</span></div></footer>
+</body></html>

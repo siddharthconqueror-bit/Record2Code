@@ -1,0 +1,119 @@
+<!DOCTYPE html><html class="h-full" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Report2Code - Help Center &amp; Clinical Support</title>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<!-- Google Fonts: Inter and IBM Plex Sans -->
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<!-- Tailwind CSS v3 -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "on-background": "#0b1c30",
+            "tertiary": "#0051d5",
+            "primary": "#00685f",
+            "on-primary-fixed-variant": "#005049",
+            "surface-dim": "#cbdbf5",
+            "background": "#f8f9ff",
+            "tertiary-fixed": "#dbe1ff",
+            "tertiary-fixed-dim": "#b4c5ff",
+            "surface-container-highest": "#d3e4fe",
+            "primary-fixed": "#89f5e7",
+            "on-error": "#ffffff",
+            "surface-variant": "#d3e4fe",
+            "surface": "#f8f9ff",
+            "outline-variant": "#bcc9c6",
+            "inverse-on-surface": "#eaf1ff",
+            "on-tertiary-fixed": "#00174b",
+            "secondary-fixed": "#dae2fd",
+            "error-container": "#ffdad6",
+            "outline": "#6d7a77",
+            "on-secondary-fixed": "#131b2e",
+            "primary-fixed-dim": "#6bd8cb",
+            "error": "#ba1a1a",
+            "on-surface": "#0b1c30",
+            "surface-container-lowest": "#ffffff",
+            "on-secondary-fixed-variant": "#3f465c",
+            "surface-container": "#e5eeff",
+            "secondary-fixed-dim": "#bec6e0",
+            "secondary": "#565e74",
+            "on-tertiary-container": "#fefcff",
+            "on-primary": "#ffffff",
+            "surface-container-low": "#eff4ff",
+            "on-primary-container": "#f4fffc",
+            "secondary-container": "#dae2fd",
+            "surface-tint": "#006a61",
+            "on-tertiary-fixed-variant": "#003ea8",
+            "tertiary-container": "#316bf3",
+            "on-tertiary": "#ffffff",
+            "on-secondary-container": "#5c647a",
+            "surface-container-high": "#dce9ff",
+            "on-primary-fixed": "#00201d",
+            "on-error-container": "#93000a",
+            "primary-container": "#008378",
+            "inverse-primary": "#6bd8cb",
+            "inverse-surface": "#213145",
+            "on-surface-variant": "#3d4947",
+            "surface-bright": "#f8f9ff",
+            "on-secondary": "#ffffff"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.125rem",
+            "lg": "0.25rem",
+            "xl": "0.5rem",
+            "full": "0.75rem"
+          },
+          "spacing": {
+            "space-md": "0.75rem",
+            "gutter-lg": "1.5rem",
+            "space-lg": "1.25rem",
+            "gutter": "1rem",
+            "space-xl": "2rem",
+            "space-xs": "0.25rem",
+            "space-sm": "0.5rem",
+            "margin-lg": "2rem",
+            "margin": "1.25rem"
+          },
+          "fontFamily": {
+            "body-sm": ["Inter"],
+            "title-sm": ["IBM Plex Sans"],
+            "headline-xl": ["IBM Plex Sans"],
+            "body-lg": ["Inter"],
+            "headline-xl-mobile": ["IBM Plex Sans"],
+            "headline-lg": ["IBM Plex Sans"],
+            "label-md": ["IBM Plex Sans"],
+            "label-sm": ["IBM Plex Sans"],
+            "headline-md": ["IBM Plex Sans"],
+            "body-md": ["Inter"],
+            "code-display": ["IBM Plex Sans"]
+          },
+          "fontSize": {
+            "body-sm": ["12px", { "lineHeight": "18px", "fontWeight": "400" }],
+            "title-sm": ["15px", { "lineHeight": "20px", "letterSpacing": "-0.005em", "fontWeight": "600" }],
+            "headline-xl": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+            "body-lg": ["15px", { "lineHeight": "24px", "fontWeight": "400" }],
+            "headline-xl-mobile": ["26px", { "lineHeight": "34px", "letterSpacing": "-0.015em", "fontWeight": "600" }],
+            "headline-lg": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.015em", "fontWeight": "600" }],
+            "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600" }],
+            "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.03em", "fontWeight": "600" }],
+            "headline-md": ["18px", { "lineHeight": "24px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "body-md": ["13px", { "lineHeight": "20px", "fontWeight": "400" }],
+            "code-display": ["16px", { "lineHeight": "20px", "letterSpacing": "0.04em", "fontWeight": "700" }]
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-background text-on-surface antialiased flex flex-col min-h-full font-body-md selection:bg-primary-fixed selection:text-on-primary-fixed">
+<!-- TopNavBar (Derived verbatim from Shared Components JSON with active 'Support' navigation) -->
+<header class="w-full bg-white border-b border-slate-200 sticky top-0 z-50"><div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-wrap items-center justify-between gap-2 py-2"><div class="flex flex-wrap items-center gap-4"><a href="index.html" class="flex flex-col"><span class="flex items-center gap-2"><span class="material-symbols-outlined text-teal-700 text-2xl">terminal</span><span class="text-xl font-bold tracking-tight text-slate-900">Report2Code</span></span><span class="text-[11px] text-slate-500">The coding workspace for trainee coders.</span></a><nav class="flex flex-wrap items-center gap-1 md:ml-4 md:pl-4 md:border-l md:border-slate-200"><a href="index.html" class="px-3 py-1.5 text-sm rounded-md transition-colors font-medium text-slate-600 hover:text-slate-900 hover:bg-slate-50">Home</a><a href="workspace.html" class="px-3 py-1.5 text-sm rounded-md transition-colors font-medium text-slate-600 hover:text-slate-900 hover:bg-slate-50">Workspace</a><a href="trainee.html" class="px-3 py-1.5 text-sm rounded-md transition-colors font-medium text-slate-600 hover:text-slate-900 hover:bg-slate-50">Trainee Mode</a><a href="about.html" class="px-3 py-1.5 text-sm rounded-md transition-colors font-medium text-slate-600 hover:text-slate-900 hover:bg-slate-50">About</a><a href="support.html" class="px-3 py-1.5 text-sm rounded-md transition-colors font-bold text-teal-800 bg-teal-50 border-b-2 border-teal-700">Support</a></nav></div><span class="px-2.5 py-1 text-xs font-semibold bg-teal-50 text-teal-800 border border-teal-200 rounded-full">WHO ICD-10</span></div></header><main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-10"><section class="space-y-2"><h1 class="text-3xl font-bold text-slate-900">Support</h1><p class="text-slate-600">Answers to common questions, and a way to report a wrong code.</p></section><section class="bg-white border border-slate-200 rounded-lg px-5"><details class="border-b border-slate-200 last:border-0 py-4"><summary class="cursor-pointer font-semibold text-slate-900">How do I get codes from a note?</summary><p class="text-slate-600 mt-2">Open Workspace, paste the note and press Analyze Note. Accept each code you agree with.</p></details><details class="border-b border-slate-200 last:border-0 py-4"><summary class="cursor-pointer font-semibold text-slate-900">What does Check mean?</summary><p class="text-slate-600 mt-2">The code needs your review, for example the doctor has not linked two conditions. Read the note beside the code.</p></details><details class="border-b border-slate-200 last:border-0 py-4"><summary class="cursor-pointer font-semibold text-slate-900">Why was a condition not coded?</summary><p class="text-slate-600 mt-2">Negated conditions (such as denies fever) and past ones (such as history of) are not coded as active diagnoses.</p></details><details class="border-b border-slate-200 last:border-0 py-4"><summary class="cursor-pointer font-semibold text-slate-900">Why are there no CKD stage codes?</summary><p class="text-slate-600 mt-2">WHO ICD-10 has no stage-wise CKD codes. Those belong to the US ICD-10-CM.</p></details><details class="border-b border-slate-200 last:border-0 py-4"><summary class="cursor-pointer font-semibold text-slate-900">What is a dagger and asterisk code?</summary><p class="text-slate-600 mt-2">A pair of codes for one condition. The dagger names the cause and the asterisk names the body part affected. Code the dagger first.</p></details><details class="border-b border-slate-200 last:border-0 py-4"><summary class="cursor-pointer font-semibold text-slate-900">Can I use these codes for claims?</summary><p class="text-slate-600 mt-2">Only after a certified coder verifies them. Report2Code is a practice and support tool.</p></details></section><section class="bg-white border border-slate-200 border-t-4 border-t-blue-600 rounded-lg p-5 max-w-2xl space-y-3"><h2 class="text-xl font-bold text-slate-900">Report a wrong code</h2><form action="mailto:your-support-email@example.com" method="post" enctype="text/plain" class="space-y-3"><label class="block text-sm font-medium text-slate-700">Your name<input type="text" class="mt-1 w-full rounded-md border-slate-300 text-sm"></label><label class="block text-sm font-medium text-slate-700">Email<input type="email" class="mt-1 w-full rounded-md border-slate-300 text-sm"></label><label class="block text-sm font-medium text-slate-700">What went wrong?<textarea rows="4" class="mt-1 w-full rounded-md border-slate-300 text-sm" placeholder="Paste the de-identified note and the code you expected."></textarea></label><button class="px-5 py-2.5 rounded-md text-sm font-semibold bg-teal-700 text-white hover:bg-teal-800">Send report</button></form><p class="text-xs text-slate-500">Replace the email address in this form before launch.</p></section></main><footer class="border-t border-slate-200 bg-white mt-10"><div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5 text-sm text-slate-500 flex flex-wrap justify-between gap-2"><span>© 2026 Report2Code. Training and practice tool. A certified coder must verify every code.</span><span>WHO ICD-10 · Use de-identified notes only</span></div></footer>
+</body></html>

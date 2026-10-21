@@ -1,0 +1,1216 @@
+================================================================================
+RECORD2CODE TRAINEE MODE CLINICAL REVIEW LOG
+Generated: 2026-10-21T00:43:59.848Z
+Total Cases Reviewed: 66
+Exact Engine Matches: 9
+Cases Requiring Human Review / Engine Differences: 57
+================================================================================
+
+PURPOSE:
+This review file highlights cases where the automated suggestion engine output
+differs from the case's authoritative gold-standard answer.
+Per WHO ICD-10 coding guidelines:
+- Complex clinical vignettes often describe previous medical history, surgical
+  interventions, differential workups, or negated conditions.
+- Gold standard answers represent the primary encounter diagnosis / dagger-asterisk
+  sequencing that a trained human coder must select.
+- Authoritative answers were NOT modified or compromised to force matching.
+
+--------------------------------------------------------------------------------
+
+[CASE 1] ID: tc_01 | Type 2 Diabetes with Diabetic Nephropathy (Intermediate)
+CLINICAL NOTE:
+"A 62-year-old male from Jaipur with a 14-year history of Type 2 diabetes mellitus presents to the nephrology OPD with persistent heavy proteinuria (2.8 g/24h) and elevated serum creatinine of 2.6 mg/dL. Renal biopsy confirms Kimmelstiel-Wilson nodules, diagnostic of diabetic glomerulosclerosis secondary to type 2 diabetes."
+
+EXPECTED GOLD-STANDARD CODES:
+E11.2, N08.3
+
+ENGINE SUGGESTED CODES:
+N39.1, E11.9
+
+DIFFERENCE ANALYSIS:
+- Missing in Engine: E11.2, N08.3
+- Extra in Engine:   N39.1, E11.9
+
+CLINICAL RATIONALE:
+Dual coding required: E11.2 (etiology dagger) sequenced first, followed by N08.3 (manifestation asterisk) for diabetic nephropathy.
+
+CODING TIP:
+In WHO ICD-10, always sequence the dagger (†) underlying etiology code before the asterisk (*) organ manifestation code.
+--------------------------------------------------------------------------------
+
+[CASE 2] ID: tc_02 | Type 2 Diabetes with Nonproliferative Retinopathy (Intermediate)
+CLINICAL NOTE:
+"A 56-year-old female from Delhi attending the diabetes clinic has fundus examination revealing bilateral microaneurysms, dot-and-blot haemorrhages, and hard exudates consistent with diabetic retinopathy due to long-standing type 2 diabetes."
+
+EXPECTED GOLD-STANDARD CODES:
+E11.3, H36.0
+
+ENGINE SUGGESTED CODES:
+E11.3, H36.0, E12.3, E13.3, H35.0
+
+DIFFERENCE ANALYSIS:
+- Missing in Engine: None
+- Extra in Engine:   E12.3, E13.3, H35.0
+
+CLINICAL RATIONALE:
+Diabetic retinopathy requires E11.3† as primary etiology and H36.0* as manifestation code.
+
+CODING TIP:
+Never report H36.0* alone without its governing diabetes dagger code.
+--------------------------------------------------------------------------------
+
+[CASE 3] ID: tc_03 | Type 2 Diabetes with Diabetic Polyneuropathy (Intermediate)
+CLINICAL NOTE:
+"A 60-year-old male from Bengaluru with known type 2 diabetes presents with progressive bilateral symmetrical burning pain, tingling, and stocking-distribution sensory loss in lower limbs. Nerve conduction studies confirm diabetic polyneuropathy."
+
+EXPECTED GOLD-STANDARD CODES:
+E11.4, G63.2
+
+ENGINE SUGGESTED CODES:
+G63.2, E11.4, E14.0, E14.1, E14.2, E14.3, E14.4, E14.5, E14.6, G62
+
+DIFFERENCE ANALYSIS:
+- Missing in Engine: None
+- Extra in Engine:   E14.0, E14.1, E14.2, E14.3, E14.4, E14.5, E14.6, G62
+
+CLINICAL RATIONALE:
+Diabetic polyneuropathy is dual-coded: E11.4† for diabetes with neurological complications, followed by G63.2* for diabetic polyneuropathy.
+
+CODING TIP:
+G63.2 is an asterisk code and cannot be used as primary diagnosis.
+--------------------------------------------------------------------------------
+
+[CASE 4] ID: tc_04 | Type 2 Diabetes with Peripheral Angiopathy & Foot Ulcer (Intermediate)
+CLINICAL NOTE:
+"A 68-year-old male from Lucknow with poorly controlled type 2 diabetes presents with a non-healing right neuropathic/ischaemic heel ulcer. Doppler ultrasound confirms peripheral arterial angiopathy secondary to diabetes."
+
+EXPECTED GOLD-STANDARD CODES:
+E11.5, I79.2
+
+ENGINE SUGGESTED CODES:
+E14.0, E14.1, E14.2, E14.3, E14.4, E14.5, E14.6
+
+DIFFERENCE ANALYSIS:
+- Missing in Engine: E11.5, I79.2
+- Extra in Engine:   E14.0, E14.1, E14.2, E14.3, E14.4, E14.5, E14.6
+
+CLINICAL RATIONALE:
+Code E11.5† identifies type 2 diabetes with circulatory complications, paired with I79.2* for peripheral angiopathy in diseases classified elsewhere.
+
+CODING TIP:
+Look for circulatory involvement modifier (E11.5) when ischemic diabetic foot complications are documented.
+--------------------------------------------------------------------------------
+
+[CASE 5] ID: tc_06 | Plasmodium Vivax Malaria (Beginner)
+CLINICAL NOTE:
+"A 32-year-old male resident of Mumbai presents to the fever clinic with high-grade tertian fever with chills, rigors, and profuse sweating. Peripheral blood smear microscopy confirms Plasmodium vivax trophozoites with a negative falciparum test."
+
+EXPECTED GOLD-STANDARD CODES:
+B51.9
+
+ENGINE SUGGESTED CODES:
+A78
+
+DIFFERENCE ANALYSIS:
+- Missing in Engine: B51.9
+- Extra in Engine:   A78
+
+CLINICAL RATIONALE:
+B51.9 represents Plasmodium vivax malaria without complications.
+
+CODING TIP:
+Distinguish between B50 (falciparum), B51 (vivax), B52 (malariae), and B54 (unspecified malaria).
+--------------------------------------------------------------------------------
+
+[CASE 6] ID: tc_07 | Dengue Fever without Warning Signs (Beginner)
+CLINICAL NOTE:
+"A 24-year-old female from Chennai presents with acute fever of 3 days duration accompanied by severe retro-orbital pain, arthralgia, and flushing rash. Dengue NS1 antigen is positive; platelets are 160,000/mcL with no hematocrit hemoconcentration or bleeding."
+
+EXPECTED GOLD-STANDARD CODES:
+A97.0
+
+ENGINE SUGGESTED CODES:
+A97.0, A78
+
+DIFFERENCE ANALYSIS:
+- Missing in Engine: None
+- Extra in Engine:   A78
+
+CLINICAL RATIONALE:
+In WHO ICD-10, A97.0 designates dengue without warning signs.
+
+CODING TIP:
+Do not use symptom codes like R50.9 when a confirmed virological etiology is documented.
+--------------------------------------------------------------------------------
+
+[CASE 7] ID: tc_08 | Enteric (Typhoid) Fever (Beginner)
+CLINICAL NOTE:
+"A 21-year-old male college student in Hyderabad presents with step-ladder remittent pyrexia for 10 days, abdominal discomfort, coated tongue, and hepatosplenomegaly. Blood culture is positive for Salmonella enterica serotype Typhi."
+
+EXPECTED GOLD-STANDARD CODES:
+A01.0
+
+ENGINE SUGGESTED CODES:
+K14.3, Z10.8
+
+DIFFERENCE ANALYSIS:
+- Missing in Engine: A01.0
+- Extra in Engine:   K14.3, Z10.8
+
+CLINICAL RATIONALE:
+A01.0 specifically denotes typhoid fever due to Salmonella typhi.
+
+CODING TIP:
+Paratyphoid fever is classified under A01.1 through A01.4, not A01.0.
+--------------------------------------------------------------------------------
+
+[CASE 8] ID: tc_09 | Sputum Smear-Positive Pulmonary Tuberculosis (Intermediate)
+CLINICAL NOTE:
+"A 38-year-old male from Patna presents with chronic evening fever, night sweats, 6-kg weight loss, and productive cough with hemoptysis for 6 weeks. Sputum smear microscopy reveals 3+ Acid Fast Bacilli (AFB positive for Mycobacterium tuberculosis)."
+
+EXPECTED GOLD-STANDARD CODES:
+A15.0
+
+ENGINE SUGGESTED CODES:
+A15.0, A78
+
+DIFFERENCE ANALYSIS:
+- Missing in Engine: None
+- Extra in Engine:   A78
+
+CLINICAL RATIONALE:
+A15.0 classifies tuberculosis of lung, confirmed by sputum microscopy with or without culture.
+
+CODING TIP:
+Clinical TB without bacteriological or histological confirmation must be assigned to A16.-, not A15.-.
+--------------------------------------------------------------------------------
+
+[CASE 9] ID: tc_10 | Acute Hepatitis A with Jaundice (Beginner)
+CLINICAL NOTE:
+"A 17-year-old student from Ahmedabad presents with acute onset jaundice, dark urine, anorexia, and tender hepatomegaly following consumption of street food. Serum IgM anti-HAV is strongly positive, ALT is 1420 IU/L. Diagnosed with acute hepatitis A without hepatic coma."
+
+EXPECTED GOLD-STANDARD CODES:
+B15.9
+
+ENGINE SUGGESTED CODES:
+Z10.8
+
+DIFFERENCE ANALYSIS:
+- Missing in Engine: B15.9
+- Extra in Engine:   Z10.8
+
+CLINICAL RATIONALE:
+B15.9 represents hepatitis A without hepatic coma.
+
+CODING TIP:
+Use B15.0 only if acute hepatic coma/encephalopathy is documented.
+--------------------------------------------------------------------------------
+
+[CASE 10] ID: tc_11 | Acute Amoebic Dysentery (Beginner)
+CLINICAL NOTE:
+"A 29-year-old male in Kolkata presents with severe cramping abdominal pain, tenesmus, and bloody mucoid stools 8 times daily. Stool wet mount reveals active Entamoeba histolytica trophozoites with ingested red blood cells."
+
+EXPECTED GOLD-STANDARD CODES:
+A06.0
+
+ENGINE SUGGESTED CODES:
+R10.0, R52.9
+
+DIFFERENCE ANALYSIS:
+- Missing in Engine: A06.0
+- Extra in Engine:   R10.0, R52.9
+
+CLINICAL RATIONALE:
+A06.0 is the specific code for acute amoebic dysentery (intestinal amoebiasis).
+
+CODING TIP:
+Do not code nonspecific gastroenteritis (A09) when a protozoal cause is confirmed.
+--------------------------------------------------------------------------------
+
+[CASE 11] ID: tc_12 | Cholera due to Vibrio cholerae (Beginner)
+CLINICAL NOTE:
+"A 42-year-old male admitted to the infectious diseases isolation ward in Cuttack with acute voluminous profuse "rice-water" diarrhoea and severe dehydration. Stool culture isolates Vibrio cholerae 01."
+
+EXPECTED GOLD-STANDARD CODES:
+A00.0
+
+ENGINE SUGGESTED CODES:
+A09.0, E86, Z29.0
+
+DIFFERENCE ANALYSIS:
+- Missing in Engine: A00.0
+- Extra in Engine:   A09.0, E86, Z29.0
+
+CLINICAL RATIONALE:
+A00.0 denotes cholera due to Vibrio cholerae 01, biovar cholerae.
+
+CODING TIP:
+Check whether Vibrio cholerae 01 (A00.0) or eltor (A00.1) is isolated in microbiology reports.
+--------------------------------------------------------------------------------
+
+[CASE 12] ID: tc_13 | Leptospirosis with Jaundice (Intermediate)
+CLINICAL NOTE:
+"A 34-year-old municipal sanitary worker in Kochi presents following monsoon water-logging with high fever, marked conjunctival suffusion, severe calf tenderness, jaundice, and elevated creatinine. Leptospira IgM ELISA is positive."
+
+EXPECTED GOLD-STANDARD CODES:
+A27.0
+
+ENGINE SUGGESTED CODES:
+A78
+
+DIFFERENCE ANALYSIS:
+- Missing in Engine: A27.0
+- Extra in Engine:   A78
+
+CLINICAL RATIONALE:
+A27.0 specifically classifies leptospirosis icterohaemorrhagica (Weil disease).
+
+CODING TIP:
+Leptospirosis presenting with jaundice and renal dysfunction is coded to A27.0 rather than A27.9.
+--------------------------------------------------------------------------------
+
+[CASE 13] ID: tc_14 | Acute ST-Elevation Myocardial Infarction of Anterior Wall (Beginner)
+CLINICAL NOTE:
+"A 52-year-old male from Mumbai presents to the emergency room with 2 hours of crushing retrosternal chest pain radiating to the left arm. ECG demonstrates hyperacute ST-segment elevation across leads V1-V4, with peak Troponin-I > 50 ng/mL."
+
+EXPECTED GOLD-STANDARD CODES:
+I21.0
+
+ENGINE SUGGESTED CODES:
+Z89.2
+
+DIFFERENCE ANALYSIS:
+- Missing in Engine: I21.0
+- Extra in Engine:   Z89.2
+
+CLINICAL RATIONALE:
+I21.0 is the specific WHO code for acute transmural myocardial infarction of anterior wall.
+
+CODING TIP:
+ICD-10 category I21 specifies anatomical site (anterior I21.0, inferior I21.1, other sites I21.2).
+--------------------------------------------------------------------------------
+
+[CASE 14] ID: tc_15 | Essential (Primary) Hypertension (Beginner)
+CLINICAL NOTE:
+"A 50-year-old female schoolteacher in Bhopal presents for executive health check-up. Persistent blood pressure over 3 visits averages 154/96 mmHg. Renal function, urinalysis, and echocardiography are normal. Primary essential hypertension diagnosed."
+
+EXPECTED GOLD-STANDARD CODES:
+I10
+
+ENGINE SUGGESTED CODES:
+Z00.0, I10
+
+DIFFERENCE ANALYSIS:
+- Missing in Engine: None
+- Extra in Engine:   Z00.0
+
+CLINICAL RATIONALE:
+I10 designates essential (primary) hypertension without secondary cause.
+
+CODING TIP:
+Check I10 Excludes notes: excludes hypertensive heart disease (I11) and hypertensive kidney disease (I12).
+--------------------------------------------------------------------------------
+
+[CASE 15] ID: tc_16 | Hypertensive Heart Disease with Congestive Heart Failure (Intermediate)
+CLINICAL NOTE:
+"A 66-year-old male from Nagpur with a 20-year history of poorly treated systemic hypertension presents with orthopnea, paroxysmal nocturnal dyspnea, and bilateral pedal edema. Echocardiogram shows concentric left ventricular hypertrophy and congestive heart failure."
+
+EXPECTED GOLD-STANDARD CODES:
+I11.0
+
+ENGINE SUGGESTED CODES:
+I50.0, I11.0, I50.1
+
+DIFFERENCE ANALYSIS:
+- Missing in Engine: None
+- Extra in Engine:   I50.0, I50.1
+
+CLINICAL RATIONALE:
+Combination code I11.0 represents hypertensive heart disease with (congestive) heart failure.
+
+CODING TIP:
+Do not code separate I10 and I50 when the combination code I11.0 accounts for both.
+--------------------------------------------------------------------------------
+
+[CASE 16] ID: tc_17 | Unstable Angina Pectoris (Beginner)
+CLINICAL NOTE:
+"A 58-year-old male businessman in Delhi presents with crescendo angina: retrosternal chest tightness occurring on minimal exertion and at rest. Serial cardiac enzymes remain negative, ECG shows transient ST depression."
+
+EXPECTED GOLD-STANDARD CODES:
+I20.0
+
+ENGINE SUGGESTED CODES:
+I20.0, F32.9, Z13.3
+
+DIFFERENCE ANALYSIS:
+- Missing in Engine: None
+- Extra in Engine:   F32.9, Z13.3
+
+CLINICAL RATIONALE:
+I20.0 classifies unstable angina (angina with increasing frequency or severity).
+
+CODING TIP:
+Do not code acute myocardial infarction (I21) when troponins are strictly negative.
+--------------------------------------------------------------------------------
+
+[CASE 17] ID: tc_19 | Atrial Fibrillation (Beginner)
+CLINICAL NOTE:
+"A 71-year-old female in Chandigarh presents to cardiology with palpitations and lightheadedness. Pulse is irregularly irregular at 128 bpm. 12-lead ECG demonstrates absence of P waves and irregular f-waves, confirming atrial fibrillation."
+
+EXPECTED GOLD-STANDARD CODES:
+I48
+
+ENGINE SUGGESTED CODES:
+R00.2
+
+DIFFERENCE ANALYSIS:
+- Missing in Engine: I48
+- Extra in Engine:   R00.2
+
+CLINICAL RATIONALE:
+I48 represents atrial fibrillation and flutter in WHO ICD-10 2019 edition.
+
+CODING TIP:
+In WHO ICD-10 2019, atrial fibrillation is mapped to 3-character category I48.
+--------------------------------------------------------------------------------
+
+[CASE 18] ID: tc_20 | COPD with Acute Lower Respiratory Infection (Intermediate)
+CLINICAL NOTE:
+"A 69-year-old chronic bidi smoker in Kanpur with established COPD presents with high fever, increased productive cough with thick green purulent sputum, and dyspnea. Chest radiograph shows acute lower respiratory tract infection."
+
+EXPECTED GOLD-STANDARD CODES:
+J44.0, J22
+
+ENGINE SUGGESTED CODES:
+J22, J44.0, J98.7, A78
+
+DIFFERENCE ANALYSIS:
+- Missing in Engine: None
+- Extra in Engine:   J98.7, A78
+
+CLINICAL RATIONALE:
+J44.0 denotes COPD with acute lower respiratory infection; instructional note mandates adding code J22 for the infection.
+
+CODING TIP:
+Always check WHO tabular instructional notes underneath J44.0 specifying "Use additional code to identify infection".
+--------------------------------------------------------------------------------
+
+[CASE 19] ID: tc_23 | Lobar Pneumonia, Unspecified (Beginner)
+CLINICAL NOTE:
+"A 45-year-old male farmer from Haryana presents with high fever, chills, pleuritic right-sided chest pain, and rust-colored sputum. Chest radiograph reveals dense consolidation of the right middle lobe, diagnosing lobar pneumonia."
+
+EXPECTED GOLD-STANDARD CODES:
+J18.1
+
+ENGINE SUGGESTED CODES:
+J18.1, A78
+
+DIFFERENCE ANALYSIS:
+- Missing in Engine: None
+- Extra in Engine:   A78
+
+CLINICAL RATIONALE:
+J18.1 classifies lobar pneumonia, unspecified organism.
+
+CODING TIP:
+When the radiologist or physician specifies lobar consolidation, choose J18.1 over J18.9.
+--------------------------------------------------------------------------------
+
+[CASE 20] ID: tc_26 | Chronic Kidney Disease Stage 4 (Intermediate)
+CLINICAL NOTE:
+"A 65-year-old male in Ahmedabad with progressive renal decline over 3 years presents for follow-up. Serum creatinine is 3.4 mg/dL and estimated GFR is 22 mL/min/1.73m2. The nephrologist confirms chronic kidney disease stage 4 (severe)."
+
+EXPECTED GOLD-STANDARD CODES:
+N18.4
+
+ENGINE SUGGESTED CODES:
+N18.1, N18.2, N18.3, N18.4, N18.5
+
+DIFFERENCE ANALYSIS:
+- Missing in Engine: None
+- Extra in Engine:   N18.1, N18.2, N18.3, N18.5
+
+CLINICAL RATIONALE:
+N18.4 specifically corresponds to Chronic kidney disease, stage 4 (eGFR 15-29 mL/min).
+
+CODING TIP:
+WHO ICD-10 stages CKD under N18: N18.1 (stage 1) through N18.5 (stage 5 / end stage).
+--------------------------------------------------------------------------------
+
+[CASE 21] ID: tc_27 | Calculus of Kidney (Nephrolithiasis) (Beginner)
+CLINICAL NOTE:
+"A 39-year-old male in Jaipur presents to emergency with excruciating acute right flank colicky pain radiating to the groin with microscopic hematuria. Non-contrast CT KUB reveals a 7-mm obstructing stone in the right renal pelvis without hydronephrosis."
+
+EXPECTED GOLD-STANDARD CODES:
+N20.0
+
+ENGINE SUGGESTED CODES:
+L02.2, L03.3, S30.1, S31.1, T21
+
+DIFFERENCE ANALYSIS:
+- Missing in Engine: N20.0
+- Extra in Engine:   L02.2, L03.3, S30.1, S31.1, T21
+
+CLINICAL RATIONALE:
+N20.0 is the specific code for calculus of kidney (nephrolithiasis).
+
+CODING TIP:
+Differentiate between calculus of kidney (N20.0) and calculus of ureter (N20.1).
+--------------------------------------------------------------------------------
+
+[CASE 22] ID: tc_28 | Nephrotic Syndrome with Minor Glomerular Abnormality (Minimal Change Disease) (Intermediate)
+CLINICAL NOTE:
+"A 7-year-old male child in Kolkata presents with generalized puffiness of face, anasarca, and frothy urine. Urinalysis shows 4+ proteinuria, serum albumin is 1.8 g/dL, and lipid profile shows severe hypercholesterolemia. Renal histology demonstrates minimal change nephrotic syndrome."
+
+EXPECTED GOLD-STANDARD CODES:
+N04.0
+
+ENGINE SUGGESTED CODES:
+N04.9
+
+DIFFERENCE ANALYSIS:
+- Missing in Engine: N04.0
+- Extra in Engine:   N04.9
+
+CLINICAL RATIONALE:
+N04.0 classifies nephrotic syndrome with minor glomerular abnormality (minimal change lesion).
+
+CODING TIP:
+The 4th character .0 in category N04 specifies minor glomerular lesion.
+--------------------------------------------------------------------------------
+
+[CASE 23] ID: tc_29 | Acute Tubulo-Interstitial Nephritis (Acute Pyelonephritis) (Beginner)
+CLINICAL NOTE:
+"A 27-year-old female in Pune presents with high fever, rigors, nausea, and severe left costovertebral angle flank tenderness. Urinalysis reveals pyuria, white blood cell casts, and bacteriuria. Diagnosed with acute non-obstructive pyelonephritis."
+
+EXPECTED GOLD-STANDARD CODES:
+N10
+
+ENGINE SUGGESTED CODES:
+S30.1, S31.1, T21, N10, N12, A78
+
+DIFFERENCE ANALYSIS:
+- Missing in Engine: None
+- Extra in Engine:   S30.1, S31.1, T21, N12, A78
+
+CLINICAL RATIONALE:
+N10 is the WHO ICD-10 3-character code for acute tubulo-interstitial nephritis (acute pyelonephritis).
+
+CODING TIP:
+Chronic pyelonephritis is classified under N11, not N10.
+--------------------------------------------------------------------------------
+
+[CASE 24] ID: tc_31 | Other Acute Gastritis (Beginner)
+CLINICAL NOTE:
+"A 44-year-old male in Mumbai with a history of heavy NSAID use for backache presents with acute severe epigastric burning pain, nausea, and vomiting. Upper GI endoscopy reveals diffuse erythema, mucosal friability, and erosions in the gastric antrum."
+
+EXPECTED GOLD-STANDARD CODES:
+K29.1
+
+ENGINE SUGGESTED CODES:
+M54.9, L53.9
+
+DIFFERENCE ANALYSIS:
+- Missing in Engine: K29.1
+- Extra in Engine:   M54.9, L53.9
+
+CLINICAL RATIONALE:
+K29.1 designates other acute gastritis.
+
+CODING TIP:
+Choose K29.1 over the generic K29.7 when endoscopy confirms acute gastritis.
+--------------------------------------------------------------------------------
+
+[CASE 25] ID: tc_32 | Acute Appendicitis without Perforation (Beginner)
+CLINICAL NOTE:
+"A 19-year-old male in Chennai presents to the emergency surgical unit with periumbilical pain migrating to the right iliac fossa, localized guarding, and McBurney point tenderness. Ultrasound reveals a non-compressible blind-ending appendix measuring 9 mm with surrounding fat stranding, without perforation or abscess."
+
+EXPECTED GOLD-STANDARD CODES:
+K35.8
+
+ENGINE SUGGESTED CODES:
+R52.9
+
+DIFFERENCE ANALYSIS:
+- Missing in Engine: K35.8
+- Extra in Engine:   R52.9
+
+CLINICAL RATIONALE:
+K35.8 denotes other and unspecified acute appendicitis (acute appendicitis without perforation or peritonitis).
+
+CODING TIP:
+K35.2 / K35.3 are used when generalized or localized peritonitis/perforation is present.
+--------------------------------------------------------------------------------
+
+[CASE 26] ID: tc_33 | Calculus of Gallbladder with Acute Cholecystitis (Intermediate)
+CLINICAL NOTE:
+"A 48-year-old multiparous female in Bhopal presents with sudden excruciating right upper quadrant pain radiating to the right scapula, accompanied by fever and vomiting. Positive Murphy sign. Ultrasound reveals gallstones impacted in the cystic duct with a 5-mm thickened gallbladder wall and pericholecystic fluid."
+
+EXPECTED GOLD-STANDARD CODES:
+K80.0
+
+ENGINE SUGGESTED CODES:
+S42.1, A78
+
+DIFFERENCE ANALYSIS:
+- Missing in Engine: K80.0
+- Extra in Engine:   S42.1, A78
+
+CLINICAL RATIONALE:
+K80.0 classifies calculus of gallbladder with acute cholecystitis.
+
+CODING TIP:
+Use combination code K80.0 instead of separate codes for gallstones (K80.2) and cholecystitis (K81.0).
+--------------------------------------------------------------------------------
+
+[CASE 27] ID: tc_35 | Gastro-Oesophageal Reflux Disease with Oesophagitis (Intermediate)
+CLINICAL NOTE:
+"A 51-year-old male in Delhi complains of chronic retrosternal heartburn and acid regurgitation worse after meals. Upper gastrointestinal endoscopy confirms Los Angeles Grade B erosive reflux oesophagitis."
+
+EXPECTED GOLD-STANDARD CODES:
+K21.0
+
+ENGINE SUGGESTED CODES:
+K20, K21.0
+
+DIFFERENCE ANALYSIS:
+- Missing in Engine: None
+- Extra in Engine:   K20
+
+CLINICAL RATIONALE:
+K21.0 is the specific WHO ICD-10 code for gastro-oesophageal reflux disease with oesophagitis.
+
+CODING TIP:
+Differentiate K21.0 (with oesophagitis) from K21.9 (without oesophagitis).
+--------------------------------------------------------------------------------
+
+[CASE 28] ID: tc_36 | Other and Unspecified Cirrhosis of Liver (Intermediate)
+CLINICAL NOTE:
+"A 58-year-old male from Nagpur with a long history of chronic alcohol consumption presents with abdominal distension, spider nevi, and splenomegaly. Abdominal sonography and elastography confirm micronodular cirrhosis of the liver without portal vein thrombosis."
+
+EXPECTED GOLD-STANDARD CODES:
+K74.6
+
+ENGINE SUGGESTED CODES:
+T51.9
+
+DIFFERENCE ANALYSIS:
+- Missing in Engine: K74.6
+- Extra in Engine:   T51.9
+
+CLINICAL RATIONALE:
+K74.6 designates other and unspecified cirrhosis of liver.
+
+CODING TIP:
+K70.3 is used for alcoholic cirrhosis; when coded generally or non-specifically, K74.6 represents cirrhosis.
+--------------------------------------------------------------------------------
+
+[CASE 29] ID: tc_37 | Pre-eclampsia, Unspecified (Intermediate)
+CLINICAL NOTE:
+"A 26-year-old primigravida at 34 weeks of gestation in Mumbai attends antenatal clinic. Blood pressure is 156/102 mmHg and spot urine protein-to-creatinine ratio is 0.65 (significant proteinuria). Platelets, AST, and ALT are within normal limits."
+
+EXPECTED GOLD-STANDARD CODES:
+O14.9
+
+ENGINE SUGGESTED CODES:
+R80
+
+DIFFERENCE ANALYSIS:
+- Missing in Engine: O14.9
+- Extra in Engine:   R80
+
+CLINICAL RATIONALE:
+O14.9 classifies pre-eclampsia, unspecified.
+
+CODING TIP:
+Differentiate between mild-to-moderate pre-eclampsia (O14.0), severe pre-eclampsia (O14.1), and eclampsia (O15).
+--------------------------------------------------------------------------------
+
+[CASE 30] ID: tc_38 | Gestational Diabetes Mellitus (Intermediate)
+CLINICAL NOTE:
+"A 30-year-old woman at 26 weeks of gestation in Hyderabad has an abnormal 75g oral glucose tolerance test with a fasting blood glucose of 104 mg/dL and 2-hour value of 172 mg/dL. She had normal pre-pregnancy glycemia."
+
+EXPECTED GOLD-STANDARD CODES:
+O24.4
+
+ENGINE SUGGESTED CODES:
+R73.0
+
+DIFFERENCE ANALYSIS:
+- Missing in Engine: O24.4
+- Extra in Engine:   R73.0
+
+CLINICAL RATIONALE:
+O24.4 designates diabetes mellitus arising in pregnancy (gestational diabetes).
+
+CODING TIP:
+Do not code pre-existing type 2 diabetes (O24.1) when hyperglycemia first appears during pregnancy.
+--------------------------------------------------------------------------------
+
+[CASE 31] ID: tc_39 | Mild Hyperemesis Gravidarum (Beginner)
+CLINICAL NOTE:
+"A 22-year-old pregnant female at 9 weeks gestation in Lucknow presents with intractable nausea and vomiting of pregnancy resulting in 3% weight loss and mild ketonuria, without dehydration or electrolyte disturbance."
+
+EXPECTED GOLD-STANDARD CODES:
+O21.0
+
+ENGINE SUGGESTED CODES:
+O21.9
+
+DIFFERENCE ANALYSIS:
+- Missing in Engine: O21.0
+- Extra in Engine:   O21.9
+
+CLINICAL RATIONALE:
+O21.0 represents mild hyperemesis gravidarum starting before the end of the 22nd week of gestation.
+
+CODING TIP:
+When hyperemesis causes metabolic disturbance (hypokalemia, alkalosis), code O21.1.
+--------------------------------------------------------------------------------
+
+[CASE 32] ID: tc_40 | Tubal Ectopic Pregnancy (Intermediate)
+CLINICAL NOTE:
+"A 28-year-old female at 7 weeks gestation in Chennai presents with acute lower abdominal pain and scanty vaginal bleeding. Pelvic transvaginal ultrasound demonstrates an empty uterine cavity and a gestational sac with positive cardiac activity in the right fallopian tube."
+
+EXPECTED GOLD-STANDARD CODES:
+O00.1
+
+ENGINE SUGGESTED CODES:
+R52.0
+
+DIFFERENCE ANALYSIS:
+- Missing in Engine: O00.1
+- Extra in Engine:   R52.0
+
+CLINICAL RATIONALE:
+O00.1 specifically denotes tubal pregnancy.
+
+CODING TIP:
+Category O00 specifies anatomical location: abdominal (O00.0), tubal (O00.1), or ovarian (O00.2).
+--------------------------------------------------------------------------------
+
+[CASE 33] ID: tc_41 | Missed Abortion (Beginner)
+CLINICAL NOTE:
+"A 31-year-old female at 11 weeks amenorrhea in Jaipur presents for routine first-trimester scan. Ultrasound reveals an intrauterine embryo corresponding to 7 weeks with absent fetal heart pulsation and closed internal os. Diagnosed with missed abortion."
+
+EXPECTED GOLD-STANDARD CODES:
+O02.1
+
+ENGINE SUGGESTED CODES:
+O02.1, O05
+
+DIFFERENCE ANALYSIS:
+- Missing in Engine: None
+- Extra in Engine:   O05
+
+CLINICAL RATIONALE:
+O02.1 is the specific code for missed abortion (early fetal death with retention of dead products of conception).
+
+CODING TIP:
+Check category O02 (other abnormal products of conception) for missed abortion.
+--------------------------------------------------------------------------------
+
+[CASE 34] ID: tc_42 | Fracture of Shaft of Femur (Beginner)
+CLINICAL NOTE:
+"A 35-year-old male construction laborer in Bengaluru is brought to the orthopedic casualty after falling from scaffolding. Examination shows deformity and abnormal mobility of the mid-thigh. X-ray confirms a closed transverse fracture of the shaft of the right femur."
+
+EXPECTED GOLD-STANDARD CODES:
+S72.3
+
+ENGINE SUGGESTED CODES:
+S72.3, T14.2, W88
+
+DIFFERENCE ANALYSIS:
+- Missing in Engine: None
+- Extra in Engine:   T14.2, W88
+
+CLINICAL RATIONALE:
+S72.3 designates fracture of shaft of femur.
+
+CODING TIP:
+Fractures of the femur are anatomically subdivided: neck (S72.0), pertrochanteric (S72.1), shaft (S72.3), lower end (S72.4).
+--------------------------------------------------------------------------------
+
+[CASE 35] ID: tc_43 | Colles Fracture (Lower End of Radius) (Beginner)
+CLINICAL NOTE:
+"A 63-year-old postmenopausal woman in Pune slips on wet tiles and falls on an outstretched hand. She presents with severe wrist pain and "dinner fork" deformity. Radiographs demonstrate a closed fracture of the lower end of the right radius with dorsal displacement."
+
+EXPECTED GOLD-STANDARD CODES:
+S52.5
+
+ENGINE SUGGESTED CODES:
+S52.5, W27, T14.2
+
+DIFFERENCE ANALYSIS:
+- Missing in Engine: None
+- Extra in Engine:   W27, T14.2
+
+CLINICAL RATIONALE:
+S52.5 classifies fracture of lower end of radius (Colles fracture).
+
+CODING TIP:
+S52.5 includes Colles fracture and Smith fracture of the distal radius.
+--------------------------------------------------------------------------------
+
+[CASE 36] ID: tc_44 | Primary Osteoarthritis of Knee (Beginner)
+CLINICAL NOTE:
+"A 61-year-old female in Chandigarh presents with bilateral knee pain for 2 years, worse on weight-bearing and climbing stairs, with crepitus and morning stiffness lasting 15 minutes. Knee radiographs show joint space narrowing and subchondral sclerosis diagnostic of primary osteoarthritis of the knee."
+
+EXPECTED GOLD-STANDARD CODES:
+M17.1
+
+ENGINE SUGGESTED CODES:
+R52.9
+
+DIFFERENCE ANALYSIS:
+- Missing in Engine: M17.1
+- Extra in Engine:   R52.9
+
+CLINICAL RATIONALE:
+M17.1 denotes other primary gonarthrosis (primary osteoarthritis of knee).
+
+CODING TIP:
+WHO ICD-10 distinguishes bilateral primary gonarthrosis (M17.0) from unilateral primary gonarthrosis (M17.1).
+--------------------------------------------------------------------------------
+
+[CASE 37] ID: tc_45 | Lumbar Intervertebral Disc Displacement (Intermediate)
+CLINICAL NOTE:
+"A 42-year-old male accountant in Delhi presents with severe lower back pain radiating down the posterior right thigh to the lateral foot (sciatica). Straight leg raise test is positive at 35 degrees. MRI confirms L4-L5 posterior disc herniation compressing the traversing nerve root."
+
+EXPECTED GOLD-STANDARD CODES:
+M51.2
+
+ENGINE SUGGESTED CODES:
+Z89.6, M54.3
+
+DIFFERENCE ANALYSIS:
+- Missing in Engine: M51.2
+- Extra in Engine:   Z89.6, M54.3
+
+CLINICAL RATIONALE:
+M51.2 denotes other specified intervertebral disc displacement (lumbar disc herniation).
+
+CODING TIP:
+Use M51.1 if the coder codes lumbar disc disorder with radiculopathy; M51.2 specifies disc herniation/displacement.
+--------------------------------------------------------------------------------
+
+[CASE 38] ID: tc_46 | Concussion (Commotio Cerebri) (Beginner)
+CLINICAL NOTE:
+"A 23-year-old male motorcycle pillion rider in Mumbai struck his head on pavement during an accident. He experienced 4 minutes of brief loss of consciousness, retro-orbital headache, and post-traumatic amnesia. Non-contrast brain CT scan is normal."
+
+EXPECTED GOLD-STANDARD CODES:
+S06.0
+
+ENGINE SUGGESTED CODES:
+S52.1, V29.9, X59.9
+
+DIFFERENCE ANALYSIS:
+- Missing in Engine: S06.0
+- Extra in Engine:   S52.1, V29.9, X59.9
+
+CLINICAL RATIONALE:
+S06.0 classifies concussion.
+
+CODING TIP:
+Category S06 covers intracranial injuries; S06.0 is assigned when imaging shows no structural hematoma or contusion.
+--------------------------------------------------------------------------------
+
+[CASE 39] ID: tc_47 | Cellulitis of Lower Limb (Beginner)
+CLINICAL NOTE:
+"A 54-year-old male in Hyderabad presents with a 3-day history of a rapidly spreading, painful, erythematous, warm, and swollen area with ill-defined margins over his left pretibial region accompanied by low-grade fever."
+
+EXPECTED GOLD-STANDARD CODES:
+L03.1
+
+ENGINE SUGGESTED CODES:
+A78
+
+DIFFERENCE ANALYSIS:
+- Missing in Engine: L03.1
+- Extra in Engine:   A78
+
+CLINICAL RATIONALE:
+L03.1 classifies cellulitis of limb (including lower leg).
+
+CODING TIP:
+L03 categorizes cellulitis by anatomical site; L03.1 is for limbs.
+--------------------------------------------------------------------------------
+
+[CASE 40] ID: tc_48 | Psoriasis Vulgaris (Plaque Psoriasis) (Beginner)
+CLINICAL NOTE:
+"A 37-year-old male in Ahmedabad presents with chronic symmetrical erythematous plaques covered with silvery-white micaceous scales over both extensor elbows and knees. Auspitz sign is positive."
+
+EXPECTED GOLD-STANDARD CODES:
+L40.0
+
+ENGINE SUGGESTED CODES:
+S52.0
+
+DIFFERENCE ANALYSIS:
+- Missing in Engine: L40.0
+- Extra in Engine:   S52.0
+
+CLINICAL RATIONALE:
+L40.0 designates psoriasis vulgaris (common plaque psoriasis).
+
+CODING TIP:
+Pustular psoriasis is coded to L40.1, whereas chronic plaque psoriasis is L40.0.
+--------------------------------------------------------------------------------
+
+[CASE 41] ID: tc_49 | Atopic Dermatitis, Unspecified (Beginner)
+CLINICAL NOTE:
+"A 14-year-old boy in Kochi presents with intense pruritus and lichenified erythematous eczematous patches over the antecubital and popliteal flexures. Family history is positive for allergic rhinitis and asthma."
+
+EXPECTED GOLD-STANDARD CODES:
+L20.9
+
+ENGINE SUGGESTED CODES:
+J30.3, J30.4, J31.0, J45.0, L29.9
+
+DIFFERENCE ANALYSIS:
+- Missing in Engine: L20.9
+- Extra in Engine:   J30.3, J30.4, J31.0, J45.0, L29.9
+
+CLINICAL RATIONALE:
+L20.9 denotes atopic dermatitis, unspecified.
+
+CODING TIP:
+Category L20 classifies atopic eczema; infantile is L20.0, flexural/unspecified is L20.9.
+--------------------------------------------------------------------------------
+
+[CASE 42] ID: tc_50 | Impetigo (Contagiosa) (Beginner)
+CLINICAL NOTE:
+"A 6-year-old girl in Patna presents with itchy, fragile vesicles around the nose and mouth that ruptured to form thick golden "honey-colored" adherent crusts. Diagnosed with impetigo contagiosa."
+
+EXPECTED GOLD-STANDARD CODES:
+L01.0
+
+ENGINE SUGGESTED CODES:
+T17.1, T20, Z90.0, L01
+
+DIFFERENCE ANALYSIS:
+- Missing in Engine: L01.0
+- Extra in Engine:   T17.1, T20, Z90.0, L01
+
+CLINICAL RATIONALE:
+L01.0 classifies impetigo (any organism, any site).
+
+CODING TIP:
+L01.0 covers impetigo contagiosa; bullous impetigo is L01.1.
+--------------------------------------------------------------------------------
+
+[CASE 43] ID: tc_51 | Iron Deficiency Anaemia, Unspecified (Beginner)
+CLINICAL NOTE:
+"A 24-year-old female in Varanasi presents with fatigue, pallor, and exertional breathlessness. Hemoglobin is 7.2 g/dL, MCV 66 fL, MCH 21 pg, and serum ferritin is severely reduced at 4 ng/mL, confirming microcytic hypochromic iron deficiency anaemia."
+
+EXPECTED GOLD-STANDARD CODES:
+D50.9
+
+ENGINE SUGGESTED CODES:
+D50.9, E61.1, D64.9
+
+DIFFERENCE ANALYSIS:
+- Missing in Engine: None
+- Extra in Engine:   E61.1, D64.9
+
+CLINICAL RATIONALE:
+D50.9 classifies iron deficiency anaemia, unspecified.
+
+CODING TIP:
+D50.0 is used when secondary to blood loss (chronic); D50.9 is for general/unspecified iron deficiency anaemia.
+--------------------------------------------------------------------------------
+
+[CASE 44] ID: tc_52 | Vitamin B12 Deficiency Anaemia, Unspecified (Beginner)
+CLINICAL NOTE:
+"A 52-year-old strict vegetarian male in Ahmedabad presents with progressive lethargy, tingling paresthesias in toes, and smooth sore tongue. Complete blood count shows macrocytic anaemia with Hb 8.1 g/dL, MCV 112 fL, and serum vitamin B12 level of 85 pg/mL."
+
+EXPECTED GOLD-STANDARD CODES:
+D51.9
+
+ENGINE SUGGESTED CODES:
+T25, Z89.4, D64.9, T45.2
+
+DIFFERENCE ANALYSIS:
+- Missing in Engine: D51.9
+- Extra in Engine:   T25, Z89.4, D64.9, T45.2
+
+CLINICAL RATIONALE:
+D51.9 designates vitamin B12 deficiency anaemia, unspecified.
+
+CODING TIP:
+Category D51 differentiates dietary (D51.3), pernicious (D51.0), and unspecified (D51.9).
+--------------------------------------------------------------------------------
+
+[CASE 45] ID: tc_53 | Sickle-Cell Anaemia with Crisis (Intermediate)
+CLINICAL NOTE:
+"A 19-year-old male from a tribal district in Odisha with known homozygous sickle cell disorder presents with agonizing musculoskeletal bone pain in both legs and lumbar spine precipitated by dehydration. Diagnosed with sickle-cell painful vaso-occlusive crisis."
+
+EXPECTED GOLD-STANDARD CODES:
+D57.0
+
+ENGINE SUGGESTED CODES:
+D57.1, E86, M89.9, Z89.6
+
+DIFFERENCE ANALYSIS:
+- Missing in Engine: D57.0
+- Extra in Engine:   D57.1, E86, M89.9, Z89.6
+
+CLINICAL RATIONALE:
+D57.0 classifies sickle-cell anaemia with crisis (vaso-occlusive crisis).
+
+CODING TIP:
+Sickle-cell anaemia without crisis is D57.1; with crisis is D57.0.
+--------------------------------------------------------------------------------
+
+[CASE 46] ID: tc_54 | Immune (Idiopathic) Thrombocytopenic Purpura (Intermediate)
+CLINICAL NOTE:
+"A 29-year-old female in Lucknow presents with spontaneous petechiae and ecchymoses on both arms and legs and epistaxis. Platelet count is 14,000/mcL; bone marrow examination reveals increased megakaryocytes with normal erythroid and myeloid lines."
+
+EXPECTED GOLD-STANDARD CODES:
+D69.3
+
+ENGINE SUGGESTED CODES:
+Z89.2, Z89.6, Z94.8
+
+DIFFERENCE ANALYSIS:
+- Missing in Engine: D69.3
+- Extra in Engine:   Z89.2, Z89.6, Z94.8
+
+CLINICAL RATIONALE:
+D69.3 denotes immune thrombocytopenic purpura.
+
+CODING TIP:
+Category D69 classifies purpura and other hemorrhagic conditions; D69.3 is ITP.
+--------------------------------------------------------------------------------
+
+[CASE 47] ID: tc_55 | Senile Nuclear Cataract (Beginner)
+CLINICAL NOTE:
+"A 68-year-old male retired farmer in Jaipur complains of gradual, painless, bilateral diminution of distant vision and glare while driving at night. Slit-lamp biomicroscopy reveals dense yellowish-brown nuclear opacification of both crystalline lenses."
+
+EXPECTED GOLD-STANDARD CODES:
+H25.1
+
+ENGINE SUGGESTED CODES:
+None
+
+DIFFERENCE ANALYSIS:
+- Missing in Engine: H25.1
+- Extra in Engine:   None
+
+CLINICAL RATIONALE:
+H25.1 classifies senile nuclear cataract.
+
+CODING TIP:
+Senile cataract types in H25 include incipient (H25.0), nuclear (H25.1), and morgagnian (H25.2).
+--------------------------------------------------------------------------------
+
+[CASE 48] ID: tc_56 | Primary Open-Angle Glaucoma (Beginner)
+CLINICAL NOTE:
+"A 59-year-old female in Chennai attends eye OPD. Intraocular pressure is 28 mmHg in right eye and 26 mmHg in left eye. Visual field testing reveals arcuate scotomas and fundus reveals glaucomatous optic disc cupping (cup-to-disc ratio 0.8). Gonioscopy confirms open anterior chamber angles."
+
+EXPECTED GOLD-STANDARD CODES:
+H40.1
+
+ENGINE SUGGESTED CODES:
+Z90.0, H53.4
+
+DIFFERENCE ANALYSIS:
+- Missing in Engine: H40.1
+- Extra in Engine:   Z90.0, H53.4
+
+CLINICAL RATIONALE:
+H40.1 designates primary open-angle glaucoma.
+
+CODING TIP:
+Angle-closure glaucoma is coded to H40.2; open-angle is H40.1.
+--------------------------------------------------------------------------------
+
+[CASE 49] ID: tc_57 | Acute Suppurative Otitis Media (Beginner)
+CLINICAL NOTE:
+"A 5-year-old boy in Delhi is brought with high fever and acute severe right ear pain followed by sudden bloody purulent otorrhea and relief of pain. Otoscopy reveals a perforation in the pars tensa of the right tympanic membrane with pulsatile pus discharge."
+
+EXPECTED GOLD-STANDARD CODES:
+H66.0
+
+ENGINE SUGGESTED CODES:
+H72.9, A78
+
+DIFFERENCE ANALYSIS:
+- Missing in Engine: H66.0
+- Extra in Engine:   H72.9, A78
+
+CLINICAL RATIONALE:
+H66.0 represents acute suppurative otitis media.
+
+CODING TIP:
+Chronic suppurative otitis media is coded to H66.1-H66.3, while acute is H66.0.
+--------------------------------------------------------------------------------
+
+[CASE 50] ID: tc_58 | Meniere Disease (Beginner)
+CLINICAL NOTE:
+"A 46-year-old male in Bengaluru presents with episodic spontaneous rotational vertigo lasting 3 hours, associated with fluctuating low-frequency sensorineural hearing loss, roaring tinnitus, and aural fullness in the left ear."
+
+EXPECTED GOLD-STANDARD CODES:
+H81.0
+
+ENGINE SUGGESTED CODES:
+H90.5, H91.9, H93.1
+
+DIFFERENCE ANALYSIS:
+- Missing in Engine: H81.0
+- Extra in Engine:   H90.5, H91.9, H93.1
+
+CLINICAL RATIONALE:
+H81.0 specifically denotes Meniere disease (endolymphatic hydrops).
+
+CODING TIP:
+Benign paroxysmal positional vertigo (BPPV) is H81.1; Meniere is H81.0.
+--------------------------------------------------------------------------------
+
+[CASE 51] ID: tc_59 | Moderate Depressive Episode (Beginner)
+CLINICAL NOTE:
+"A 34-year-old female software developer in Pune presents with persistent depressed mood, anhedonia, psychomotor retardation, feelings of worthlessness, and insomnia for 6 weeks, with marked impairment in work and social activities."
+
+EXPECTED GOLD-STANDARD CODES:
+F32.1
+
+ENGINE SUGGESTED CODES:
+F52.1
+
+DIFFERENCE ANALYSIS:
+- Missing in Engine: F32.1
+- Extra in Engine:   F52.1
+
+CLINICAL RATIONALE:
+F32.1 designates moderate depressive episode.
+
+CODING TIP:
+Severity of depressive episodes is classified as mild (F32.0), moderate (F32.1), or severe (F32.2/F32.3).
+--------------------------------------------------------------------------------
+
+[CASE 52] ID: tc_60 | Generalized Anxiety Disorder (Beginner)
+CLINICAL NOTE:
+"A 28-year-old male in Hyderabad presents with uncontrollable excessive anxiety and worry about everyday matters for over 8 months, accompanied by motor tension, muscle aches, restlessness, palpitations, and irritability without panic attacks."
+
+EXPECTED GOLD-STANDARD CODES:
+F41.1
+
+ENGINE SUGGESTED CODES:
+F41.9
+
+DIFFERENCE ANALYSIS:
+- Missing in Engine: F41.1
+- Extra in Engine:   F41.9
+
+CLINICAL RATIONALE:
+F41.1 classifies generalized anxiety disorder.
+
+CODING TIP:
+Panic disorder without agoraphobia is F41.0; generalized chronic anxiety is F41.1.
+--------------------------------------------------------------------------------
+
+[CASE 53] ID: tc_61 | Migraine without Aura (Common Migraine) (Beginner)
+CLINICAL NOTE:
+"A 31-year-old woman in Mumbai presents with recurrent episodes of moderate-to-severe throbbing unilateral hemicranial headache lasting 18 hours, exacerbated by physical exertion, accompanied by nausea, photophobia, and phonophobia, without visual aura."
+
+EXPECTED GOLD-STANDARD CODES:
+G43.0
+
+ENGINE SUGGESTED CODES:
+H53.1
+
+DIFFERENCE ANALYSIS:
+- Missing in Engine: G43.0
+- Extra in Engine:   H53.1
+
+CLINICAL RATIONALE:
+G43.0 denotes migraine without aura (common migraine).
+
+CODING TIP:
+Migraine with aura is G43.1; migraine without aura is G43.0.
+--------------------------------------------------------------------------------
+
+[CASE 54] ID: tc_62 | Acute Bronchiolitis due to Respiratory Syncytial Virus (RSV) (Beginner)
+CLINICAL NOTE:
+"A 5-month-old male infant in Delhi presents during winter with runny nose, rapid breathing, subcostal retractions, tachypnea, and audible expiratory wheezing and fine crepitations. Nasopharyngeal swab rapid antigen test is positive for respiratory syncytial virus (RSV)."
+
+EXPECTED GOLD-STANDARD CODES:
+J21.0
+
+ENGINE SUGGESTED CODES:
+T17.1, T20, Z90.0
+
+DIFFERENCE ANALYSIS:
+- Missing in Engine: J21.0
+- Extra in Engine:   T17.1, T20, Z90.0
+
+CLINICAL RATIONALE:
+J21.0 classifies acute bronchiolitis due to respiratory syncytial virus.
+
+CODING TIP:
+Category J21 classifies acute bronchiolitis: .0 for RSV, .8 for other organisms, .9 for unspecified.
+--------------------------------------------------------------------------------
+
+[CASE 55] ID: tc_64 | Gastro-oesophageal Reflux (Acute MI Ruled Out) (Intermediate)
+CLINICAL NOTE:
+"A 47-year-old male in Mumbai presented to emergency with retrosternal burning chest pain. Electrocardiogram and serial cardiac troponin tests were completely normal, ruling out acute myocardial infarction. Upper endoscopy reveals normal stomach and esophagus without mucosal breaks. Diagnosed with gastro-oesophageal reflux disease without oesophagitis."
+
+EXPECTED GOLD-STANDARD CODES:
+K21.9
+
+ENGINE SUGGESTED CODES:
+I21.9, I25.2
+
+DIFFERENCE ANALYSIS:
+- Missing in Engine: K21.9
+- Extra in Engine:   I21.9, I25.2
+
+CLINICAL RATIONALE:
+Only code the confirmed final diagnosis K21.9. Acute myocardial infarction was investigated and ruled out, so I21 must not be coded.
+
+CODING TIP:
+Do not code suspected diagnoses that are ruled out during hospitalization.
+--------------------------------------------------------------------------------
+
+[CASE 56] ID: tc_65 | Acute Mesenteric Lymphadenitis (Appendicitis Ruled Out) (Intermediate)
+CLINICAL NOTE:
+"A 12-year-old boy in Chennai presented with right lower quadrant abdominal pain, nausea, and low-grade fever. Emergency ultrasound demonstrated a normal, compressible vermiform appendix without inflammation, ruling out acute appendicitis, but demonstrated multiple enlarged inflammatory mesenteric lymph nodes. Diagnosed with acute non-specific mesenteric lymphadenitis."
+
+EXPECTED GOLD-STANDARD CODES:
+I88.0
+
+ENGINE SUGGESTED CODES:
+I88.0, L04.9, K35.8, A78, K36, Z38.8
+
+DIFFERENCE ANALYSIS:
+- Missing in Engine: None
+- Extra in Engine:   L04.9, K35.8, A78, K36, Z38.8
+
+CLINICAL RATIONALE:
+I88.0 classifies non-specific mesenteric lymphadenitis. Appendicitis was investigated and ruled out and must not be coded.
+
+CODING TIP:
+Negation rule: conditions explicitly documented as "ruled out" or "negative for" must never be assigned an ICD code.
+--------------------------------------------------------------------------------
+
+[CASE 57] ID: tc_66 | Tension-Type Headache (Subarachnoid Haemorrhage Excluded) (Intermediate)
+CLINICAL NOTE:
+"A 36-year-old female in Bengaluru presented with bilateral band-like pressing occipital headache. Emergency non-contrast brain CT scan and cerebrospinal fluid lumbar puncture were clear, excluding subarachnoid haemorrhage and intracranial bleeding. Neurologist confirmed episodic tension-type headache."
+
+EXPECTED GOLD-STANDARD CODES:
+G44.2
+
+ENGINE SUGGESTED CODES:
+I60.9, I62.9, G44.2, I60.7
+
+DIFFERENCE ANALYSIS:
+- Missing in Engine: None
+- Extra in Engine:   I60.9, I62.9, I60.7
+
+CLINICAL RATIONALE:
+G44.2 classifies tension-type headache. Subarachnoid hemorrhage (I60) was ruled out and excluded.
+
+CODING TIP:
+When a catastrophic diagnosis is investigated and ruled out, assign only the established definitive diagnosis.
+--------------------------------------------------------------------------------
